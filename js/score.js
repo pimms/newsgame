@@ -16,8 +16,9 @@ var Score = function() {
 Score.prototype.update = function( elapsed ) {
 	this.multiplierBuildup -= elapsed/10;
 	if ( this.multiplierBuildup < 0 ) {
-		this.multiplierBuildup = 100;
+		this.multiplierBuildup = 0;
 		if ( this.multiplier > 1 ) {
+			this.multiplierBuildup = 100;
 			this.multiplier -= Math.ceil( this.multiplier/5 );
 			this.multiplierBuildup = 900;
 		}
