@@ -1,6 +1,6 @@
 
 var Person = function( id) {
-	this.image = gamejs.image.load('images/actors.png');
+	this.image = gamejs.image.load('img/Siv_Jensen.png');
 	this.id = id;
 	this.posX = 0;
 	this.posY = 0;

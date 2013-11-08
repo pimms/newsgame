@@ -1,10 +1,10 @@
-var gamejs = require('gamejs');
-var font   = require('gamejs/font');
+gamejs = require('gamejs');
+font   = require('gamejs/font');
 
-gamejs.preload(["img/background.png"]);
+gamejs.preload(["img/background.png", "img/Siv_Jensen.png"]);
 
 gamejs.ready(function() {
-    include_once(["spawner.js", "world.js"]);
+    include_once(["spawner.js", "world.js", "player.js"]);
 
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();

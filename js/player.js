@@ -3,8 +3,9 @@
  * A wrapper around a Person object including 
  * input from various sources.
  */
+ include_once(["person.js"])
 function Player() {
-	this.person = new Person();
+	this.person = new Person(0);
 
 	this.handleEvent = function(event) {
 		// DO SHIT WITH EVENT
@@ -27,7 +28,7 @@ function Player() {
 			var startx = parseInt(touchobj.clientX);
 			var starty = parseInt(touchobj.clientY);
 
-			
+
 		});
 
 		canvas.addEventListener("touchmove", function(e) {

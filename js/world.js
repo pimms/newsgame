@@ -1,8 +1,9 @@
+include_once(["player.js", "spawner.js"])
 function World() {
 	/* INIT WORLD OBJECTS HERE */
-	this.spawner = new Spawner();
+	this.spawner = new Spawner(this);
 	this.player = new Player(0);
-	this.npcArray = [];
+	this.npcArray = new Array();
 
 	this.background = new gamejs.sprite.Sprite();
 	this.background.image = gamejs.image.load("img/background.png");
@@ -31,6 +32,7 @@ function World() {
 	}
 
 	this.addNPC = function(person) {
-		npcArray.push(person);
+		console.log(person);
+		this.npcArray.push(person);
 	}
 }
