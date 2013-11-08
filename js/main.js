@@ -1,5 +1,5 @@
-gamejs = require('gamejs');
-font   = require('gamejs/font');
+var gamejs = require('gamejs');
+var font   = require('gamejs/font');
 
 gamejs.preload(["img/background.png"]);
 
