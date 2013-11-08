@@ -3,20 +3,30 @@
  * A wrapper around a Person object including 
  * input from various sources.
  */
- include_once(["person.js"])
+include_once(["person.js"])
 function Player() {
 	this.person = new Person(0);
 
 	this.handleEvent = function(event) {
-		// DO SHIT WITH EVENT
+		gamejs.onEvent(function(event) {
+			if(event.type === gamejs.event.MOUSE_MOTION && event.type === gamejs.event.MOUSE_DOWN) {
+				this.Person.moveTo(event.pos[0],event.pos[1])
+			}
+			
+			this.addEventListener('touchmove', function(event){
+				var touchobj = e.changedTouches[0]
+				this.Person.moveTo(touchobj.clientX, touchobj.clientY)
+				event.preventDefault()
+			}, false)
+		 })
 	}
 
 	this.update = function(msDuration) {
-		this.person.update(msDuration);
+		//this.person.update(msDuration);
 	}
 
 	this.draw = function(mainSurface) {
-		this.person.draw(mainSurface);
+		//this.person.draw(mainSurface);
 	}
 
 	// Listen for touch events yo pls
@@ -29,7 +39,7 @@ function Player() {
 			var starty = parseInt(touchobj.clientY);
 
 
-		});
+		});	
 
 		canvas.addEventListener("touchmove", function(e) {
 			var touchobj = e.changedTouches[0];

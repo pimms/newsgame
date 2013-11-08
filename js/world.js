@@ -13,12 +13,14 @@ function World() {
 	}
 
 	this.draw = function(mainSurface) {
+
 		this.background.draw(mainSurface);
 		this.player.draw(mainSurface);
 
-		for (var person in this.npcArray) {
+		console.log(this.npcArray.length);
+		this.npcArray.forEach(function(person) {
 			person.draw(mainSurface);
-		}
+		});
 	}
 
 	this.update = function(msDuration) {
@@ -26,13 +28,12 @@ function World() {
 		this.player.update(msDuration);
 
 		// Update all the NPCs		
-		for (var person in this.npcArray) {
+		this.npcArray.forEach(function(person) {
 			person.update(msDuration);
-		}	
+		});
 	}
 
 	this.addNPC = function(person) {
-		console.log(person);
 		this.npcArray.push(person);
 	}
 }

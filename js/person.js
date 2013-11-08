@@ -1,6 +1,6 @@
 
 var Person = function( id) {
-	this.image = gamejs.image.load('img/Siv_Jensen.png');
+	this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
 	this.posX = 0;
 	this.posY = 0;
@@ -29,10 +29,9 @@ Person.prototype.update = function( elapsed ) {
 			this.searching = false;
 		}
 	}
-
 };
 
-
+/*
 Person.prototype.draw  = function(display) {
 	var dims = this.image.getSize();
 	var scaleF = 0.5 + 0.5*this.posY/100;
@@ -40,3 +39,4 @@ Person.prototype.draw  = function(display) {
 	var tImg = gamejs.transform.scale(this.image,[dims[0]*scaleF, dims[1]*scaleF] );
 	display.blit( tImg, this.rect, new gamejs.Rect([this.id*32,0],[32*scaleF,32*scaleF]));
 };
+*/
