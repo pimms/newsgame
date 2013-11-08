@@ -48,8 +48,9 @@ Person.prototype.update = function( elapsed ) {
 Person.prototype.draw  = function(display) {
 	var dims = this.image.getSize();
 	var scaleF = 0.5 + 0.5*this.posY/100;
-	this.rect = new gamejs.Rect([(this.posX),(this.posY)],[dims[0]*scaleF,dims[1]*scaleF]);
-	var tImg = gamejs.transform.scale(this.image,[dims[0]*scaleF, dims[1]*scaleF] );
-	display.blit( tImg, this.rect, new gamejs.Rect([this.id*dims[0],0],[63*scaleF, dims[1]*scaleF]));
+	this.rect = new gamejs.Rect([(this.posX),(this.posY)],[32*scaleF,32*scaleF]);
+	//var tImg = gamejs.transform.scale(this.image,[dims[0]*scaleF, dims[1]*scaleF] );
+	//display.blit( tImg, this.rect, new gamejs.Rect([this.id*32,0],[32*scaleF,32*scaleF]));
+	display.blit( tImg, this.rect, new gamejs.Rect([0,0],[32*scaleF,32*scaleF]));
 };
 
