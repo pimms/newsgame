@@ -1,4 +1,4 @@
-
+include_once(["feet.js"]);
 var Person = function( id) {
 	this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
@@ -8,6 +8,8 @@ var Person = function( id) {
 	this.goalY = 70;
 	this.speed = 100;
 	this.searching = false;
+
+	this.feet = new Feet();
 	
 	this.collision = function(person) { //The function 'collision' that takes a person object as a parameter
 	disX = this.posX - person.posX;		//Subtracts this objects x from other objects x
@@ -31,6 +33,8 @@ Person.prototype.moveTo = function( x, y) {
 };
 
 Person.prototype.update = function( elapsed ) {
+	this.feet.update(elapsed);
+	
 	if(this.searching) {
 		var direction = [this.goalX-this.posX,this.goalY-this.posY];
 		var length = direction[0]*direction[0] + direction[1]*direction[1];
@@ -46,6 +50,8 @@ Person.prototype.update = function( elapsed ) {
 
 
 Person.prototype.draw  = function(display) {
+	this.feet.draw(display);
+
 	var dims = this.image.getSize();
 	var scaleF = 0.5 + 0.5*this.posY/100;
 	this.rect = new gamejs.Rect([(this.posX),(this.posY)],[32*scaleF,32*scaleF]);
