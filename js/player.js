@@ -8,7 +8,17 @@ function Player() {
 	this.person = new Person(0);
 
 	this.handleEvent = function(event) {
-		// DO SHIT WITH EVENT
+		gamejs.onEvent(function(event) {
+			if(event.type === gamejs.event.MOUSE_MOTION && event.type === gamejs.event.MOUSE_DOWN) {
+				this.Person.moveTo(event.pos[0],event.pos[1])
+			}
+			
+			this.addEventListener('touchmove', function(event){
+				var touchobj = e.changedTouches[0]
+				this.Person.moveTo(touchobj.clientX, touchobj.clientY)
+				event.preventDefault()
+			}, false)
+		 })
 	}
 
 	this.update = function(msDuration) {
