@@ -2,7 +2,7 @@ gamejs = require('gamejs');
 font   = require('gamejs/font');
 
 gamejs.ready(function() {
-    include_once(["world.js"]);
+    include_once(["spawner.js", "world.js"]);
 
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();

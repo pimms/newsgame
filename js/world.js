@@ -1,6 +1,6 @@
 function World() {
 	/* INIT WORLD OBJECTS HERE */
-	
+	this.spawner = new Spawner();
 
 	this.onEvent = function(event) {
 		
