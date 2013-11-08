@@ -8,17 +8,9 @@ function Player() {
 	this.person = new Person(0);
 
 	this.handleEvent = function(event) {
-		gamejs.onEvent(function(event) {
-			if(event.type === gamejs.event.MOUSE_MOTION && event.type === gamejs.event.MOUSE_DOWN) {
-				this.Person.moveTo(event.pos[0],event.pos[1])
-			}
-			
-			this.addEventListener('touchmove', function(event){
-				var touchobj = e.changedTouches[0]
-				this.Person.moveTo(touchobj.clientX, touchobj.clientY)
-				event.preventDefault()
-			}, false)
-		 })
+		if(/*event.type === gamejs.event.MOUSE_MOTION*/ event.type === gamejs.event.MOUSE_UP) {
+			this.person.moveTo(event.pos[0], event.pos[1]);
+		}
 	}
 
 	this.update = function(msDuration) {
@@ -35,18 +27,18 @@ function Player() {
 
 		canvas.addEventListener("touchstart", function(e) {
 			var touchobj = e.changedTouches[0];
-			var startx = parseInt(touchobj.clientX);
-			var starty = parseInt(touchobj.clientY);
+			var touchx = parseInt(touchobj.clientX);
+			var touchy = parseInt(touchobj.clientY);
 
-
+			this.person.moveTo(touchx, touchy);
 		});	
 
 		canvas.addEventListener("touchmove", function(e) {
 			var touchobj = e.changedTouches[0];
-			var startx = parseInt(touchobj.clientX);
-			var starty = parseInt(touchobj.clientY);
+			var touchx = parseInt(touchobj.clientX);
+			var touchy = parseInt(touchobj.clientY);
 
-			
+			this.person.moveTo(touchx, touchy);
 		});
 	});
 }

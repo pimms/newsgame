@@ -9,11 +9,10 @@ function World() {
 	this.background.image = gamejs.image.load("img/background.png");
 
 	this.onEvent = function(event) {
-		
+		this.player.handleEvent(event);
 	}
 
 	this.draw = function(mainSurface) {
-
 		this.background.draw(mainSurface);
 		this.player.draw(mainSurface);
 
@@ -24,7 +23,7 @@ function World() {
 	}
 
 	this.update = function(msDuration) {
-		this.spawner.update(msDuration);
+		//this.spawner.update(msDuration);
 		this.player.update(msDuration);
 
 		// Update all the NPCs		
