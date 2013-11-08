@@ -50,10 +50,10 @@ Person.prototype.update = function( elapsed ) {
 
 
 Person.prototype.draw  = function(display) {
-	this.feet.draw(display);
+	this.feet.draw(display, [this.posX, this.posY]);
 
 	var dims = this.image.getSize();
-	var scaleF = 0.5 + 0.5*this.posY/100;
+	var scaleF = 0.5*0.5 + 0.5*this.posY/100*0.5;
 	this.rect = new gamejs.Rect([(this.posX),(this.posY)],[dims[0]*scaleF,dims[1]*scaleF]);
 	display.blit( this.image, this.rect, new gamejs.Rect([0,0],[dims[0],dims[1]]));
 };
