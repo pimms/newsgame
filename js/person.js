@@ -34,8 +34,8 @@ Person.prototype.update = function( elapsed ) {
 
 };
 
-Person.prototype.draw  = function(display) {
 
-	//display.blit(this.rend);
-	display.blit(this.image, this.rect, new gamejs.Rect([this.id*32,0],[32,32]));
+Person.prototype.draw  = function(display) {
+	var tImg = gamejs.transform.scale(this.image, [ 0.75+0.25*(y/400) , 0.75+0.25*(y/400) ]);
+	display.blit( tImg, this.rect, new gamejs.Rect([this.id*32,0],[32,32]));
 };
