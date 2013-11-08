@@ -1,6 +1,8 @@
 gamejs = require('gamejs');
 font   = require('gamejs/font');
 
+gamejs.preload(["img/background.png"]);
+
 gamejs.ready(function() {
     include_once(["spawner.js", "world.js"]);
 
