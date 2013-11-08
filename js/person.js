@@ -8,6 +8,7 @@ var Person = function( id) {
 	this.goalY = 70;
 	this.speed = 100;
 	this.searching = false;
+	//this.scaleF = 0.5 + 0.5*this.posY/100;
 	
 	this.collision = function(person) { //The function 'collision' that takes a person object as a parameter
 	disX = this.posX - person.posX;		//Subtracts this objects x from other objects x
@@ -31,13 +32,14 @@ Person.prototype.moveTo = function( x, y) {
 };
 
 Person.prototype.update = function( elapsed ) {
+	this.scaleF = 0.5 + 0.5*this.posY/100;
 	if(this.searching) {
 		var direction = [this.goalX-this.posX,this.goalY-this.posY];
 		var length = direction[0]*direction[0] + direction[1]*direction[1];
 		length = Math.sqrt(length);
 		if ( length > 10 ) {
-			this.posX += this.speed*direction[0]*elapsed/(1000*length);
-			this.posY += this.speed*direction[1]*elapsed/(1000*length);
+			this.posX += this.speed*direction[0]*this.scaleF*elapsed/(1000*length);
+			this.posY += this.speed*direction[1]*this.scaleF*elapsed/(1000*length);
 		} else {
 			this.searching = false;
 		}
@@ -47,8 +49,7 @@ Person.prototype.update = function( elapsed ) {
 
 Person.prototype.draw  = function(display) {
 	var dims = this.image.getSize();
-	var scaleF = 0.5 + 0.5*this.posY/100;
-	this.rect = new gamejs.Rect([(this.posX),(this.posY)],[dims[0]*scaleF,dims[1]*scaleF]);
+	this.rect = new gamejs.Rect([(this.posX),(this.posY)],[dims[0]*this.scaleF,dims[1]*this.scaleF]);
 	display.blit( this.image, this.rect, new gamejs.Rect([0,0],[dims[0],dims[1]]));
 };
 
