@@ -7,7 +7,6 @@ var Person = function( id) {
 	this.goalX = 50;
 	this.goalY = 70;
 	this.speed = 15;
-	this.rect = new gamejs.Rect([(this.posX)*32,(this.posY)*32],[32,32]);
 	this.searching = false;
 }
 gamejs.utils.objects.extend(Person, gamejs.sprite.Sprite);
@@ -26,7 +25,6 @@ Person.prototype.update = function( elapsed ) {
 		if ( length > 10 ) {
 			this.posX += this.speed*direction[0]*elapsed/(1000*length);
 			this.posY += this.speed*direction[1]*elapsed/(1000*length);
-			this.rect = new gamejs.Rect([(this.posX),(this.posY)],[32,32]);
 		} else {
 			this.searching = false;
 		}
@@ -36,6 +34,9 @@ Person.prototype.update = function( elapsed ) {
 
 
 Person.prototype.draw  = function(display) {
-	var tImg = gamejs.transform.scale(this.image, [ 0.75+0.25*(y/400) , 0.75+0.25*(y/400) ]);
-	display.blit( tImg, this.rect, new gamejs.Rect([this.id*32,0],[32,32]));
+	var dims = this.image.getSize();
+	var scaleF = 0.5 + 0.5*this.posY/100;
+	var.rect = new gamejs.Rect([(this.posX),(this.posY)],[32*scaleF,32*scaleF]);
+	var tImg = gamejs.transform.scale(this.image,[dims[0]*scaleF, dims[1]*scaleF] );
+	display.blit( tImg, this.rect, new gamejs.Rect([this.id*32,0],[32*scaleF,32*scaleF]));
 };
