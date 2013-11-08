@@ -14,7 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="background.svg">
+   sodipodi:docname="background.svg"
+   inkscape:export-filename="/home/pimms/code/js/newsgame/inkscapefiles/background.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,8 +28,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="452.2661"
-     inkscape:cy="395.02026"
+     inkscape:cx="394.37329"
+     inkscape:cy="582.06401"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
