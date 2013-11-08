@@ -31,9 +31,6 @@ Person.prototype.update = function( elapsed ) {
 			this.searching = false;
 		}
 	}
-
-	// Apply the position
-	this.rect = gamejs.Rect([this.posX, this.posY]);
 };
 
 /*
