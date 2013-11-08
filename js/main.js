@@ -2,9 +2,9 @@ gamejs = require('gamejs');
 font   = require('gamejs/font');
 
 gamejs.ready(function() {
-    include_once([]);
+    include_once(["world.js"]);
 
-    var display = gamejs.display.setMode([600, 400]);
+    var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
     var world = new World();
 
@@ -16,7 +16,7 @@ gamejs.ready(function() {
     	world.update(msDuration);
 
         // Draw
-        mainSurface.fill("#FFFFFF");
+        mainSurface.fill("#FFAAAA");
         world.draw(mainSurface);
     });
 });
