@@ -12,11 +12,11 @@ function Player() {
 	}
 
 	this.update = function(msDuration) {
-		this.person.update(msDuration);
+		//this.person.update(msDuration);
 	}
 
 	this.draw = function(mainSurface) {
-		this.person.draw(mainSurface);
+		//this.person.draw(mainSurface);
 	}
 
 	// Listen for touch events yo pls

@@ -18,7 +18,7 @@ function Spawner(world) {
 
 	this.spawnPerson = function() {
 		var person = new Person(0);
-		person.posX = -50;
+		person.posX = 50;
 		person.posY = 300;
 		person.goalX = 850;
 		person.goalY = 300;

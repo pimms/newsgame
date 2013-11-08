@@ -13,9 +13,11 @@ function World() {
 	}
 
 	this.draw = function(mainSurface) {
-		this.background.draw(mainSurface);
+		
+		//this.background.draw(mainSurface);
 		this.player.draw(mainSurface);
 
+		console.log(this.npcArray.length);
 		this.npcArray.forEach(function(person) {
 			person.draw(mainSurface);
 		});
