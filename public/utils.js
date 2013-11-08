@@ -10,7 +10,7 @@ function include_once(includes)
         if ( $.inArray(includes[i], $('head').data('included')) === -1 )
         {
             $('head').append(
-                '<script type="text/javascript" src="javascript/'+includes[i]+'"></script>'
+                '<script type="text/javascript" src="js/'+includes[i]+'"></script>'
             );
 
             $('head').data('included').push(includes[i]);
