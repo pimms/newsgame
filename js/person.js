@@ -8,6 +8,19 @@ var Person = function( id) {
 	this.goalY = 70;
 	this.speed = 15;
 	this.searching = false;
+	
+	this.collision = function(person) { //The function 'collision' that takes a person object as a parameter
+	disX = this.posX - person.posX;		//Subtracts this objects x from other objects x
+	disY = this.posY - person.posY;		//Same as above but for y
+	
+	length = Math.sqrt((disX*disX)+(disY*disY)); //Finds the length
+	
+	if(length < 10) {					//If length is less than 10
+		return true;					//Collision happened; return true
+	}
+	return false;						//Collision didn't happen; return false
+}
+
 }
 gamejs.utils.objects.extend(Person, gamejs.sprite.Sprite);
 
