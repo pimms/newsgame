@@ -1,0 +1,69 @@
+<html>
+<head>
+
+
+	
+</head>
+<body>
+
+	<style>
+	.box{
+		width: 150px;
+		height: 150px;
+		padding: 10px;
+		border: 1px solid orange;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		background: lightyellow;
+	}
+	</style>
+	<div class="box" id="box1">
+		<h3>Touch Me!</h3>
+		</div>
+
+		<h3 id="statusdiv">Status</h3>
+	<script>
+
+		
+		window.addEventListener('load', function()
+		{
+			var box1 = document.getElementById('box1')
+			var statusdiv = document.getElementById('statusdiv')
+			var startx = 0
+			var dist = 0
+			
+			
+			box1.addEventListener('touchstart', function(e){
+			alert("HIYA")
+			var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+			startx = parseInt(touchobj.clientX)
+			statusdiv.innerHTML = 'Status: touchstart<br /> ClientX: ' + startx + 'px'
+			e.preventDefault()
+		}, false)
+		
+		box1.addEventListener('touchmove', function(e){
+			alert("HIYA")
+			var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+			var dist = parseInt(touchobj.clientX) - startx
+			statusdiv.innerHTML = 'Status: touchmove<br /> Horizontal distance traveled: ' + dist + 'px'
+			e.preventDefault()
+		}, false)
+		
+		box1.addEventListener('touchend', function(e){
+			
+			var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+			statusdiv.innerHTML = 'Status: touchend<br /> Resting x coordinate: ' + touchobj.clientX + 'px'
+			e.preventDefault()
+		}, false)
+		 
+		}, false)
+	</script>
+</body>
+</html>
+
+	
+	
+
+
+
