@@ -10,7 +10,7 @@ function Label(typeName) {
     	// render text - this returns a surface with the text written on it.
     	//var helloSurface = font.render('Hello World')
 		//new gamejs.font.Font('30px Sans-serif').render(this.typeName);
-		surface.blit((new gamejs.font.Font('30px Sans-serif')).render(this.typeName), new gamejs.Rect([20,80]));
+		//surface.blit((new gamejs.font.Font('30px Sans-serif')).render(this.typeName), new gamejs.Rect([20,80]));
 	}
 
 	this.update = function(msDuration) {
