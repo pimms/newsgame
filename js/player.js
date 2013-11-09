@@ -51,13 +51,10 @@ function Player() {
 				 	idx = 3;
 				 	break;
 			}
-			// Comment one
 
 			if (idx >= 0) {
 				this.keysDown[idx] = (event.type === gamejs.event.KEY_DOWN);
 			}
-
-			// Comment two
 		}
 	}
 	
