@@ -18,7 +18,7 @@ function Spawner(world) {
 	}
 
 	this.spawnPerson = function() {
-		var person = new Person(0);
+		var person = new Person(this.randomCharacter());
 
 		var leftToRight = (Math.random() > 0.5);
 
@@ -32,5 +32,9 @@ function Spawner(world) {
 		// Add the person to the world
 		this.world.addNPC(person);
 	}
-}
 
+	this.randomCharacter = function() {
+		var id = Math.floor(Math.random() * 2);
+		return id;
+	}
+}
