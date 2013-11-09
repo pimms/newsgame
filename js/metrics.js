@@ -30,13 +30,9 @@ function Metrics() {
 			total += this.count[i];
 		}
 
-		console.log(this.count + " - " + total);
-
 		for (var i=0; i<5; i++) {
 			var fraction = this.count[i] / total;
 			this.bars[i].current = fraction;
-
-			console.log("frac " + i + ": " + fraction);
 		}
 	}
 }
