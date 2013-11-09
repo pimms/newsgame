@@ -96,7 +96,6 @@ Person.prototype.characterType = function() {
 		case 0:
 			this.image = gamejs.image.load('img/siv_jensen.png');
 			this.characterScore = 1000;
-			this.decreaseHealth = -1;
 			this.typeName = "Siv Jensen er Norges viktigste person!";
 			break;
 		case 1:

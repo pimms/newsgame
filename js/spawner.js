@@ -6,9 +6,29 @@ function Spawner(world) {
 	this.world = world;
 	this.timer = 0;
 	this.limit = 1000;
+	
+	this.spawnerFocusIndex = 0;
+	this.spawnerFocusTimer = 0;
+	this.spawnFocus = new Array();
+	
+	for ( var i = 0 ; i < 12 ; i++ ) {
+		this.spawnFocus[i] = Math.floor((Math.random() * 6) + 1);
+	}
+	
+	this.draw = function( display ) {
+		for ( var i = this.spawnerFocusIndex ; i < 12 ; i++ ) {
+			display.blit((new gamejs.font.Font('30px Sans-serif')).render( this.spawnFocus[i].toString() ), new gamejs.Rect([500+20*i,100]));
+		}
+	}
 
 	this.update = function(msDuration) {
 		this.timer += msDuration;
+		this.spawnerFocusTimer += msDuration;
+		
+		if ( this.spawnerFocusTimer > 10000 && this.spawnerFocusIndex < 11 ) {
+			this.spawnerFocusTimer = 0;
+			this.spawnerFocusIndex++;
+		}
 
 		if (this.timer > this.limit) {
 			this.spawnPerson();
@@ -34,7 +54,10 @@ function Spawner(world) {
 	}
 
 	this.randomCharacter = function() {
-		var id = Math.floor((Math.random() * 6) + 1);
+		var id = Math.ceil(Math.random() * 12);
+		if ( id > 6 ) {
+			id = this.spawnFocus[this.spawnerFocusIndex];
+		}
 		return id;
 	}
 }
