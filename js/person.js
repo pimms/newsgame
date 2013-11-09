@@ -1,6 +1,6 @@
 include_once(["feet.js"]);
 var Person = function( id) {
-	this.image = gamejs.image.load('img/siv_jensen.png');
+	//this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
 	this.posX = 200;
 	this.posY = 205;
@@ -14,7 +14,6 @@ var Person = function( id) {
 	this.active = true;
 
 	this.feet = new Feet();
-
 }
 gamejs.utils.objects.extend(Person, gamejs.sprite.Sprite);
 
@@ -82,4 +81,13 @@ Person.prototype.onMoneyGiven = function() {
 
 Person.prototype.isDead = function() {
 	return !this.searching;
+}
+
+Person.prototype.addCharacter = function() {
+	switch(id) {
+		case 0:
+			this.image = gamejs.image.load('img/siv_jensen.png');
+		case 1:
+			this.image = gamejs.image.load('img/hipster.png');
+	}
 }
