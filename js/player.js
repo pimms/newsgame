@@ -6,15 +6,17 @@
 include_once(["person.js"])
 function Player() {
 	this.person = new Person(0);
-
+	this.posY = this.person.posY;
 	this.handleEvent = function(event) {
 		if(/*event.type === gamejs.event.MOUSE_MOTION*/ event.type === gamejs.event.MOUSE_UP) {
 			this.person.moveTo(event.pos[0], event.pos[1]);
 		}
 	}
+	
 
 	this.update = function(msDuration) {
 		this.person.update(msDuration);
+		this.posY = this.person.posY;
 	}
 
 	this.draw = function(mainSurface) {

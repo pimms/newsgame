@@ -1,20 +1,30 @@
 include_once(["player.js", "spawner.js"])
+
+ function depthCompare(a,b) {
+	return a.posY - b.posY;
+}
+
 function World() {
 	/* INIT WORLD OBJECTS HERE */
 	this.spawner = new Spawner(this);
 	this.player = new Player(0);
 	this.npcArray = new Array();
+	this.npcArray.push(this.player);
+	
 
 	this.background = new gamejs.sprite.Sprite();
 	this.background.image = gamejs.image.load("img/background.png");
 
 	this.onEvent = function(event) {
 		this.player.handleEvent(event);
+
 	}
 
 	this.draw = function(mainSurface) {
 		this.background.draw(mainSurface);
-		this.player.draw(mainSurface);
+		//this.player.draw(mainSurface);
+
+		this.npcArray.sort( depthCompare );
 
 		console.log(this.npcArray.length);
 		this.npcArray.forEach(function(person) {
@@ -23,13 +33,14 @@ function World() {
 	}
 
 	this.update = function(msDuration) {
-		//this.spawner.update(msDuration);
-		this.player.update(msDuration);
+		this.spawner.update(msDuration);
+		//this.player.update(msDuration);
 
 		// Update all the NPCs		
 		this.npcArray.forEach(function(person) {
 			person.update(msDuration);
 		});
+		
 	}
 
 	this.addNPC = function(person) {
