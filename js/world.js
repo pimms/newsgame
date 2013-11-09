@@ -26,7 +26,7 @@ function World() {
 
 		this.npcArray.sort( depthCompare );
 
-		console.log(this.npcArray.length);
+		//console.log(this.npcArray.length);
 		this.npcArray.forEach(function(person) {
 			person.draw(mainSurface);
 		});
