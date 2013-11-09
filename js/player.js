@@ -57,6 +57,7 @@ function Player() {
 				this.keysDown[idx] = (event.type === gamejs.event.KEY_DOWN);
 			}
 		}
+		
 	}
 	
 
@@ -103,7 +104,8 @@ function Player() {
 
 	// Listen for touch events yo pls
 	window.addEventListener("load", function() {
-		var canvas = document.getElementsByTagName("canvas")[0];
+		//alert("HIYA")
+		var canvas = document.getElementsByTagName("canvas");
 		
 		canvas.addEventListener("touchstart", function(e) {
 			var touchobj = e.changedTouches[0];
@@ -113,7 +115,7 @@ function Player() {
 			e.preventDefault()
 		}, false)
 
-		vas.addEventListener("touchmove", function(e) {
+		canvas.addEventListener("touchmove", function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
