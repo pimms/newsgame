@@ -5,6 +5,8 @@ var Score = function() {
 	this.posY = 40;
 	this.multiplier = 13;
 	this.multiplierBuildup = 0;
+	this.lives = 5;
+	this.image = gamejs.image.load('img/lives.png');
 }
 
 
@@ -18,6 +20,20 @@ Score.prototype.update = function( elapsed ) {
 			this.multiplierBuildup = 900;
 		}
 	}
+};
+
+
+
+Score.prototype.loseLife = function() {
+	this.lives --;
+};
+
+Score.prototype.continuePlaying = function() {
+	if  ( this.lives > 0 ) {
+		return true;
+	}
+	
+	return false;
 };
 
 Score.prototype.addScore = function( points ) {
@@ -37,4 +53,8 @@ Score.prototype.draw = function(display) {
 	display.blit((new gamejs.font.Font('20px Sans-serif')).render( scoreString), new gamejs.Rect([this.posX+18,this.posY+5]));
 	scoreString = this.score.toString();
 	display.blit((new gamejs.font.Font('30px Sans-serif')).render( scoreString), new gamejs.Rect([this.posX+80,this.posY]));
+	for ( var i = 0 ; i < this.lives ; i++ ) {
+		display.blit(this.image, new gamejs.Rect([this.posX+20*i,this.posY+40]));
+		//display.blit(this.image, new gamejs.Rect([this.posX+20*i,this.posY+40]);
+	}
 };
