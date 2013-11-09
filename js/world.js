@@ -43,7 +43,7 @@ function World() {
 	}
 
 	this.update = function(msDuration) {
-		if( score.lives < 1 && !this.gameEnded ) {
+		if( this.timer < 1 && !this.gameEnded ) {
 			this.gameEnded = true;
 			
 		}
@@ -62,7 +62,7 @@ function World() {
 			if( person != test ) {
 				if( person.active === true && person.collision( test ) ) {
 					score.addScore(person.getScore());
-					score.lives -= person.dropHealth();
+					//score.lives -= person.dropHealth();
 					person.onMoneyGiven();
 					currentTypeName = person.typeName;
 					//labelArray.push(person.typeName);
