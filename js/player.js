@@ -9,7 +9,12 @@ function Player() {
 	this.posY = this.person.posY;
 	this.handleEvent = function(event) {
 		if(/*event.type === gamejs.event.MOUSE_MOTION*/ event.type === gamejs.event.MOUSE_UP) {
-			this.person.moveTo(event.pos[0], event.pos[1]);
+			if(event.pos[1] < this.posY) {
+				this.person.moveTo(event.pos[0], event.pos[1]+35);
+			}
+			else {
+				this.person.moveTo(event.pos[0], event.pos[1]+60);
+			}
 		}
 	}
 	
