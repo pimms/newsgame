@@ -92,33 +92,45 @@ Person.prototype.characterType = function() {
 	switch(this.id) {
 		case 0:
 			this.image = gamejs.image.load('img/siv_jensen.png');
-			this.characterScore = 100;
-			this.decreaseHealth = 0;
-			this.typeName = "Siv Jensen";
+			this.characterScore = 1000;
+			this.decreaseHealth = -1;
+			this.typeName = "Siv Jensen er Norges viktigste person!";
 			break;
 		case 1:
 			this.image = gamejs.image.load('img/artist.png');
 			this.characterScore = 0;
 			this.decreaseHealth = 1;
-			this.typeName = "Kunstner";
+			this.typeName = "Kunstnere, HAH! De er ubrukelige som få!";
 			break;
 		case 2:
 			this.image = gamejs.image.load('img/nurse.png');
 			this.characterScore = 100;
 			this.decreaseHealth = 0;
-			this.typeName = "Sykepleier";
+			this.typeName = "Sykepleiere er tydligvis viktige...";
 			break;
 		case 3:
 			this.image = gamejs.image.load('img/father.png');
 			this.characterScore = 0;
 			this.decreaseHealth = 1;
-			this.typeName = "Far";
+			this.typeName = "Fedre trenger ingenting. Gå tilbake på jobb!";
 			break;
 		case 4:
 			this.image = gamejs.image.load('img/old.png');
+			this.characterScore = 0;
+			this.decreaseHealth = 1;
+			this.typeName = "Pensjonister får IKKE penger, hvorfor skulle de?";
+			break;
+		case 5:
+			this.image = gamejs.image.load('img/student.png');
 			this.characterScore = 100;
 			this.decreaseHealth = 0;
-			this.typeName = "Pensjonist";
+			this.typeName = "Studenter får penger, for de er Norges fremtid. BIATCH";
+			break;
+		case 6:
+			this.image = gamejs.image.load('img/scientist.png');
+			this.characterScore = 100;
+			this.decreaseHealth = 0;
+			this.typeName = "Vitenskap får penger, for det trengs!";
 			break;
 	}
 }

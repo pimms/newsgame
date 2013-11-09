@@ -9,7 +9,9 @@ gamejs.preload(["img/background.png",
                 "img/artist.png",
                 "img/nurse.png",
                 "img/father.png",
-                "img/old.png"]);
+                "img/old.png",
+                "img/student.png",
+                "img/scientist.png"]);
 
 gamejs.ready(function() {
     include_once(["const.js", 

@@ -5,8 +5,7 @@ function Label(typeName) {
 
 
 	this.draw = function(surface) {
-		alert(this.typeName);
-		alert("YOLO");
+		//alert(this.typeName);
 		//var font = new gamejs.font.Font('20px monospace');
     	// render text - this returns a surface with the text written on it.
     	//var helloSurface = font.render('Hello World')
@@ -17,7 +16,7 @@ function Label(typeName) {
 	this.update = function(msDuration) {
 		this.age += msDuration;
 		if (this.age > this.lifetime) {
-			//shoooooooooooot meeeeeeeeeee
+			alert("Stop that text!!");
 		}
 	}
 }

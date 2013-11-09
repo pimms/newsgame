@@ -61,7 +61,6 @@ function World() {
 					score.addScore(person.getScore());
 					score.lives -= person.dropHealth();
 					person.onMoneyGiven();
-					alert("YOLOOOO");
 					var label = new Label(person.getTypeName());
 					label.draw();
 				}
