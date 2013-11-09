@@ -75,7 +75,8 @@ Person.prototype.draw  = function(display) {
 Person.prototype.onMoneyGiven = function() {
 	this.active = false;
 	this.searching = true;
-	
+	this.speed *= 2;
+	this.feet.speed *= 2;
 	this.goalX = (this.posX > 400) ? (950) : (-100);
 	
 }
