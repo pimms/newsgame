@@ -21,7 +21,7 @@ var Person = function( id) {
 	
 	length = Math.sqrt((disX*disX)+(disY*disY)); //Finds the length
 	
-	if(length < 10) {					//If length is less than 10
+	if(length < 50 * this.scaleF) {		//If length is less than 10
 		return true;					//Collision happened; return true
 	}
 	return false;						//Collision didn't happen; return false
