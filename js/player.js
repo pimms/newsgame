@@ -103,21 +103,26 @@ function Player() {
 	// Listen for touch events yo pls
 	window.addEventListener("load", function() {
 		var canvas = document.getElementsByTagName("canvas")[0];
-
+		
 		canvas.addEventListener("touchstart", function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
-
 			this.person.moveTo(touchx, touchy);
-		});	
+			e.preventDefault()
+		}, false)
 
-		canvas.addEventListener("touchmove", function(e) {
+		vas.addEventListener("touchmove", function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
-
 			this.person.moveTo(touchx, touchy);
-		});
-	});
+			e.preventDefault()
+		},false);
+		
+		canvas.addEventListener("touchend", function(e) {
+			var touchobj = e.changedTouches[0];
+			e.preventDefault();
+		},false)
+	}, false);
 }
