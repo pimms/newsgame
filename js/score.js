@@ -22,20 +22,6 @@ Score.prototype.update = function( elapsed ) {
 	}
 };
 
-
-
-Score.prototype.loseLife = function() {
-	this.lives --;
-};
-
-Score.prototype.continuePlaying = function() {
-	if  ( this.lives > 0 ) {
-		return true;
-	}
-	
-	return false;
-};
-
 Score.prototype.addScore = function( points ) {
 	this.score += points*this.multiplier;
 	this.multiplierBuildup += points;
@@ -43,6 +29,11 @@ Score.prototype.addScore = function( points ) {
 		this.multiplier ++;
 		this.multiplierBuildup = 100;
 	}
+};
+
+Score.prototype.drawScore = function(display) {
+	var scoreString = this.score.toString();
+	display.blit((new gamejs.font.Font('30px Sans-serif')).render( scoreString), new gamejs.Rect([this.posX+80,this.posY]));
 };
 
 Score.prototype.draw = function(display) {
