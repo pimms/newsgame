@@ -22,6 +22,10 @@ function Player() {
 	this.draw = function(mainSurface) {
 		this.person.draw(mainSurface);
 	}
+	
+	this.collision = function( person ) {
+		return false;
+	}
 
 	// Listen for touch events yo pls
 	window.addEventListener("load", function() {
