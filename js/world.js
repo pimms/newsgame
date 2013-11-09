@@ -58,8 +58,8 @@ function World() {
 		this.npcArray.forEach(function(person){
 			if( person != test ) {
 				if( person.active === true && person.collision( test ) ) {
-						score.addScore(person.getScore());
-						score.lives -= person.dropHealth();
+					score.addScore(person.getScore());
+					score.lives -= person.dropHealth();
 					person.onMoneyGiven();
 				}
 			}
