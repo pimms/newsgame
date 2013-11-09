@@ -107,30 +107,51 @@ Person.prototype.characterType = function() {
 			this.group = CULTURE;
 			break;
 		case 2:
+			this.image = gamejs.image.load('img/viking.png');
+			this.typeName = "Kunstnere, HAH! De er ubrukelige som få!";
+			this.group = CULTURE;
+			break;
+		case 3:
+			this.image = gamejs.image.load('img/doctor.png');
+			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.group = HEALTH;
+			break;
+		case 4:
 			this.image = gamejs.image.load('img/nurse.png');
 			this.typeName = "Sykepleiere er tydligvis viktige...";
 			this.group = HEALTH;
 			break;
-		case 3:
+		case 5:
 			this.image = gamejs.image.load('img/father.png');
 			this.typeName = "Fedre trenger ingenting. Gå tilbake på jobb!";
 			this.group = WELFARE;
 			break;
-		case 4:
+		case 6:
 			this.image = gamejs.image.load('img/old.png');
 			this.typeName = "Pensjonister får IKKE penger, hvorfor skulle de?";
 			this.group = WELFARE;
 			break;
-		case 5:
+		case 7:
 			this.image = gamejs.image.load('img/student.png');
 			this.typeName = "Studenter får penger, for de er Norges fremtid. BIATCH";
 			this.group = SCIENCE_EDU;
 			break;
-		case 6:
+		case 8:
 			this.image = gamejs.image.load('img/scientist.png');
 			this.typeName = "Vitenskap får penger, for det trengs!";
 			this.group = SCIENCE_EDU;
 			break;
+		case 9:
+			this.image = gamejs.image.load('img/police.png');
+			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.group = INFRASTRUCTURE;
+			break;
+		case 10:
+			this.image = gamejs.image.load('img/construction_worker.png');
+			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.group = INFRASTRUCTURE;
+			break;
+		}
 	}
 }
 
