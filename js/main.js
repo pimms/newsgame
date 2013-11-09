@@ -18,7 +18,7 @@ gamejs.ready(function() {
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
     var world = new World();
-	var score = new Score();
+
 
     gamejs.onEvent(function(event) {
         world.onEvent(event);
@@ -26,11 +26,10 @@ gamejs.ready(function() {
 
     gamejs.onTick(function(msDuration) {
     	world.update(msDuration);
-		score.update(msDuration);
+
 
         // Draw
         mainSurface.fill("#FFAAAA");
         world.draw(mainSurface);
-		score.draw(mainSurface);
     });
 });

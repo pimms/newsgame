@@ -14,19 +14,6 @@ var Person = function( id) {
 
 	this.feet = new Feet();
 
-	
-	this.collision = function(person) { //The function 'collision' that takes a person object as a parameter
-	disX = this.posX - person.posX;		//Subtracts this objects x from other objects x
-	disY = this.posY - person.posY;		//Same as above but for y
-	
-	length = Math.sqrt((disX*disX)+(disY*disY)); //Finds the length
-	
-	if(length < 50 * this.scaleF) {		//If length is less than 10
-		return true;					//Collision happened; return true
-	}
-	return false;						//Collision didn't happen; return false
-}
-
 }
 gamejs.utils.objects.extend(Person, gamejs.sprite.Sprite);
 
@@ -37,6 +24,19 @@ Person.prototype.moveTo = function( x, y) {
 		y = 200;
 	}
 	this.goalY = y;
+};
+
+
+Person.prototype.collision = function( person ) { //The function 'collision' that takes a person object as a parameter
+	disX = this.posX - person.posX;		//Subtracts this objects x from other objects x
+	disY = this.posY - person.posY;		//Same as above but for y
+	
+	length = Math.sqrt((disX*disX)+(disY*disY)); //Finds the length
+	
+	if(length < 50 * this.scaleF) {		//If length is less than 10
+		return true;					//Collision happened; return true
+	}
+	return false;						//Collision didn't happen; return false
 };
 
 Person.prototype.update = function( elapsed ) {

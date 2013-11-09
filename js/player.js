@@ -13,7 +13,12 @@ function Player() {
 
 	this.handleEvent = function(event) {
 		if(/*event.type === gamejs.event.MOUSE_MOTION*/ event.type === gamejs.event.MOUSE_UP) {
-			this.person.moveTo(event.pos[0], event.pos[1]);
+			if(event.pos[1] < this.posY) {
+				this.person.moveTo(event.pos[0], event.pos[1]+35);
+			}
+			else {
+				this.person.moveTo(event.pos[0], event.pos[1]+60);
+			}
 		}
 	}
 	
@@ -39,6 +44,10 @@ function Player() {
 	this.draw = function(mainSurface) {
 		this.person.draw(mainSurface);
 		this.money.draw(mainSurface);
+	}
+	
+	this.collision = function( person ) {
+		return false;
 	}
 
 	// Listen for touch events yo pls
