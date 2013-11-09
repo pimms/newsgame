@@ -20,7 +20,6 @@ gamejs.ready(function() {
     var mainSurface = gamejs.display.getSurface();
     var world = new World();
 
-
     gamejs.onEvent(function(event) {
         world.onEvent(event);
     });
