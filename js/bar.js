@@ -4,18 +4,20 @@ function Bar(subtype) {
 
 	this.name = SUBGROUP_NAMES[subtype];
 	this.target = SUBGROUP_TARGETS[subtype];
-	this.current = 0;
+	this.current = 0.5;
 
 	this.draw = function(surface) {
 		var position = this.position;
 
 		// Draw background
-		draw.rect(	surface, "#FFF", 
-					new gamejs.Rect(position, [110, 30]), 15);
+		draw.rect(	surface, "#000", 
+					new gamejs.Rect(position, [110, 5]), 20);
 
 		// Draw the bar itself
 		draw.rect(	surface, "#FF0000",
-					new gamejs.Rect([position[0]+5, position[1]+5]),
-					10);
+					new gamejs.Rect(
+						[position[0]+5, position[1]], 
+						[this.current * 100, 1]
+					), 10);
 	}
 }
