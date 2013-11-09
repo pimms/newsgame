@@ -5,7 +5,8 @@ function Label() {
 
 
 	this.draw = function(surface, typeName) {
-		surface.blit((new gamejs.font.Font('10px Sans-serif')).render(typeName), new gamejs.Rect([520,30]));
+		surface.blit((new gamejs.font.Font('10px Sans-serif')).render(typeName), 
+					  new gamejs.Rect([520,30]));
 	}
 
 	this.update = function(msDuration) {
