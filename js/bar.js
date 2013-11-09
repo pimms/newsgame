@@ -7,6 +7,8 @@ function Bar(subtype) {
 	this.current = 0;
 
 	this.draw = function(surface) {
+		var position = this.position;
+
 		// Draw background
 		draw.rect(	surface, "#FFF", 
 					new gamejs.Rect(position, [110, 30]), 15);

@@ -40,6 +40,7 @@ function World() {
 			score.draw(mainSurface);
 
 			label.draw(mainSurface, currentTypeName);
+			this.metrics.draw(mainSurface);
 		} else {
 			score.drawScore(mainSurface);
 		}
@@ -61,7 +62,6 @@ function World() {
 
 	this.updateGame = function(msDuration) {
 		this.spawner.update(msDuration);
-		this.metrics.update(msDuration);
 		var test = this.player.person;
 		this.npcArray.forEach(function(person){
 			if( person != test ) {
