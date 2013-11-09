@@ -12,8 +12,28 @@ SPRITESCALE = 0.25;
 
 
 /* Budget Subgroups */
-INFRASTRUCTURE 	= 100;
-CULTURE 		= 101;
-SCIENCE_EDU 	= 102;
-HEALTH 			= 103;
-WELFARE 		= 104;
+INFRASTRUCTURE 	= 0;
+CULTURE 		= 1;
+SCIENCE_EDU 	= 2;
+HEALTH 			= 3;
+WELFARE 		= 4;
+
+/* Budget target proportions */
+TARGET_INFRASTRUCTURE 	= 0.15;
+TARGET_CULTURE 			= 0.25;
+TARGET_SCIENCE_EDU 		= 0.1;
+TARGET_HEALTH 			= 0.25;
+TARGET_WELFARE 			= 0.25;
+
+SUBGROUP_TARGETS = [	
+			TARGET_INFRASTRUCTURE,
+			TARGET_CULTURE,
+			TARGET_SCIENCE_EDU,
+			TARGET_HEALTH,
+			TARGET_WELFARE];
+SUBGROUP_NAMES = [	
+			"Infrastruktur og samferdsel",
+			"Kultur", 
+			"Forskning og utdanning", 
+			"Helse",
+			"Velferd"];
