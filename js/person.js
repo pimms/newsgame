@@ -82,6 +82,11 @@ Person.prototype.onMoneyGiven = function() {
 	this.feet.speed *= 2;
 	this.goalX = (this.posX > 400) ? (950) : (-100);
 	
+	if (this.decreaseHealth == 1) {
+		(new gamejs.mixer.Sound("audio/buzz.ogg")).play(false);
+	} else {
+		(new gamejs.mixer.Sound("audio/coin.ogg")).play(false);
+	}
 }
 
 Person.prototype.isDead = function() {

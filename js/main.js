@@ -11,7 +11,9 @@ gamejs.preload(["img/background.png",
                 "img/old.png",
 				        "img/student.png",
 				        "img/scientist.png",
-				        "audo/music.ogg"]);
+				        "audio/music.ogg",
+                "audio/buzz.ogg", 
+                "audio/coin.ogg"]);
 
 gamejs.ready(function() {
     include_once(["const.js", 
@@ -26,6 +28,9 @@ gamejs.ready(function() {
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
     var world = new World();
+
+    // Loop the background music
+    (new gamejs.mixer.Sound("audio/music.ogg")).play(true);
 
     gamejs.onEvent(function(event) {
         world.onEvent(event);
