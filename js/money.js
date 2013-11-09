@@ -1,5 +1,8 @@
 include_once(["const.js"]);
 
+/* This is the messiest file in the entire project.
+ * Holy shit.
+ */
 function Money() {
 	this.imageLEFT = gamejs.image.load("img/money.png");
 	this.imageRIGHT  = gamejs.transform.flip(this.imageLEFT, true, false);
