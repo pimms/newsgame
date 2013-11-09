@@ -11,6 +11,7 @@ var Person = function( id) {
 	this.scaleF = 0.5 + 0.5*this.posY/100;
 	this.imageDims = this.image.getSize();
 	this.imageDimsScale = this.imageDims;
+	this.active = true;
 
 	this.feet = new Feet();
 
@@ -71,3 +72,9 @@ Person.prototype.draw  = function(display) {
 	this.feet.draw(display, [this.posX, this.posY], this.imageDims, this.scaleF);
 };
 
+Person.prototype.onMoneyGiven = function() {
+	this.active = false;
+	this.searching = true;
+	this.goalX = -100;
+	this.goalY = -100;
+}

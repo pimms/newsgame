@@ -41,8 +41,9 @@ function World() {
 		var test = this.player.person;
 		this.npcArray.forEach(function(person){
 			if( person != test ) {
-				if( person.collision( test ) ) {
+				if( person.active === true && person.collision( test ) ) {
 					score.addScore(100);
+					person.onMoneyGiven();
 				}
 			}
 		});
