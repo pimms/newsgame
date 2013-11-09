@@ -5,9 +5,8 @@ var Score = function() {
 	this.posY = 40;
 	this.multiplier = 1;
 	this.multiplierBuildup = 0;
-	this.lives = 5;
-	this.image = gamejs.image.load('img/lives.png');
-}
+	this.timer = 120*1000;
+};
 
 
 Score.prototype.update = function( elapsed ) {
@@ -20,6 +19,9 @@ Score.prototype.update = function( elapsed ) {
 			this.multiplierBuildup = 900;
 		}
 	}
+	
+	
+	this.timer -= elapsed;
 };
 
 Score.prototype.addScore = function( points ) {
@@ -44,8 +46,21 @@ Score.prototype.draw = function(display) {
 	display.blit((new gamejs.font.Font('20px Sans-serif')).render( scoreString), new gamejs.Rect([this.posX+18,this.posY+5]));
 	scoreString = this.score.toString();
 	display.blit((new gamejs.font.Font('30px Sans-serif')).render( scoreString), new gamejs.Rect([this.posX+80,this.posY]));
-	for ( var i = 0 ; i < this.lives ; i++ ) {
-		display.blit(this.image, new gamejs.Rect([this.posX+20*i,this.posY+40]));
-		//display.blit(this.image, new gamejs.Rect([this.posX+20*i,this.posY+40]);
+	var total = Math.ceil( this.timer/1000 );
+	var min = Math.floor(total/60);
+	var sec; = seconds%60;
+	if( min < 10 ) {
+		min = "0"+min.toString();
+	} else {
+		min = min.toString();
 	}
+	if( sec < 10 ) {
+		sec = "0"+sec.toString();
+	} else {
+		sec = sec.toString();
+	}
+	
+	
+	scoreString = min + ":" + sec;
+	display.blit((new gamejs.font.Font('30px Sans-serif')).render( scoreString), new gamejs.Rect([this.posX+18,this.posY+100]));
 };
