@@ -6,7 +6,10 @@ gamejs.preload(["img/background.png",
                 "img/siv_jensen.png",
                 "img/money.png",
 				"img/lives.png",
-                "img/artist.png"]);
+                "img/artist.png",
+                "img/nurse.png",
+                "img/father.png",
+                "img/old.png"]);
 
 gamejs.ready(function() {
     include_once(["const.js", 

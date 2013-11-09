@@ -100,10 +100,18 @@ Person.prototype.characterType = function() {
 			this.decreaseHealth = 1;
 			break;
 		case 2:
-			//this.image = gamejs.image.load('img/nurse.png');
-			//this.score = 100;
-			//this.decreaseHealth = 0;
+			this.image = gamejs.image.load('img/nurse.png');
+			this.score = 100;
+			this.decreaseHealth = 0;
 			break;
+		case 3:
+			this.image = gamejs.image.load('img/father.png');
+			this.score = 0;
+			this.decreaseHealth = 1;
+		case 4:
+			this.image = gamejs.image.load('img/old.png');
+			this.score = 100;
+			this.decreaseHealth = 0;
 	}
 }
 
