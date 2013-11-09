@@ -33,3 +33,11 @@ gamejs.ready(function() {
         world.draw(mainSurface);
     });
 });
+
+
+var canvas = document.getElementsByTagName("canvas")[0];
+
+var p = document.createElement("p");
+var txt = document.createTextNode("test");
+p.appendChild(txt);
+canvas.appendChild(p);

@@ -19,3 +19,5 @@ Characters to be included in the game:
 [ ] Drug stuff
 
 [X] Science  (GETS MONEY)
+
+[X] Students (GETS MONEY)
