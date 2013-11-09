@@ -10,7 +10,7 @@ Characters to be included in the game:
 
 [X] Nurse
 
-[ ] The elderly
+[X] The elderly
 
 [ ] Fathers
 
