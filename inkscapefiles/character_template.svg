@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="character_template.svg"
+   sodipodi:docname="siv_jensen.svg"
    inkscape:export-filename="/home/pimms/code/js/newsgame/img/siv_jensen.png"
    inkscape:export-xdpi="15.481905"
    inkscape:export-ydpi="15.481905">
@@ -28,8 +28,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.28467309"
-     inkscape:cx="-108.48389"
-     inkscape:cy="581.68654"
+     inkscape:cx="723.86896"
+     inkscape:cy="149.29149"
      inkscape:document-units="px"
      inkscape:current-layer="layer10"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
