@@ -14,7 +14,7 @@ function Metrics() {
 	}
 
 	this.draw = function(display) {
-		for (var i=0; i<1; i++) {
+		for (var i=0; i<5; i++) {
 			this.bars[i].draw(display);
 		}
 	}
