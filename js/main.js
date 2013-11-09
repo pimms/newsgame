@@ -23,7 +23,9 @@ gamejs.ready(function() {
                   "player.js", 
                   "feet.js", 
                   "score.js",
-                  "label.js"]);
+                  "label.js",
+                  "metrics.js",
+                  "bar.js"]);
 
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
