@@ -15,6 +15,7 @@ function Player() {
 
 
 	this.handleEvent = function(event) {
+	
 		if (event.type === gamejs.event.MOUSE_DOWN) {
 			this.mouseButtonDown = true;
 		} else if (event.type === gamejs.event.MOUSE_UP) {
@@ -106,7 +107,7 @@ function Player() {
 		//alert("HIYA")
 		var canvas = document.getElementsByTagName("canvas");
 		
-		canvas.addEventListener("touchstart", function(e) {
+		canvas.addEventListener('touchstart', function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
@@ -114,7 +115,7 @@ function Player() {
 			e.preventDefault()
 		}, false)
 
-		canvas.addEventListener("touchmove", function(e) {
+		canvas.addEventListener('touchmove', function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
@@ -122,7 +123,7 @@ function Player() {
 			e.preventDefault()
 		},false);
 		
-		canvas.addEventListener("touchend", function(e) {
+		canvas.addEventListener('touchend', function(e) {
 			var touchobj = e.changedTouches[0];
 			e.preventDefault();
 		},false)
