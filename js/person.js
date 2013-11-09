@@ -3,6 +3,7 @@ var Person = function( id) {
 	//this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
 	this.group = 0;
+	this.characterScore = 100;
 	this.characterType();
 
 	this.posX = 200;
@@ -83,11 +84,9 @@ Person.prototype.onMoneyGiven = function() {
 	this.feet.speed *= 2;
 	this.goalX = (this.posX > 400) ? (950) : (-100);
 	
-	if (this.decreaseHealth == 1) {
-		(new gamejs.mixer.Sound("audio/buzz.ogg")).play(false);
-	} else {
-		(new gamejs.mixer.Sound("audio/coin.ogg")).play(false);
-	}
+
+	(new gamejs.mixer.Sound("audio/coin.ogg")).play(false);
+
 }
 
 Person.prototype.isDead = function() {
@@ -104,43 +103,31 @@ Person.prototype.characterType = function() {
 			break;
 		case 1:
 			this.image = gamejs.image.load('img/artist.png');
-			this.characterScore = 0;
-			this.decreaseHealth = 1;
 			this.typeName = "Kunstnere, HAH! De er ubrukelige som få!";
 			this.group = CULTURE;
 			break;
 		case 2:
 			this.image = gamejs.image.load('img/nurse.png');
-			this.characterScore = 100;
-			this.decreaseHealth = 0;
 			this.typeName = "Sykepleiere er tydligvis viktige...";
 			this.group = HEALTH;
 			break;
 		case 3:
 			this.image = gamejs.image.load('img/father.png');
-			this.characterScore = 0;
-			this.decreaseHealth = 1;
 			this.typeName = "Fedre trenger ingenting. Gå tilbake på jobb!";
 			this.group = WELFARE;
 			break;
 		case 4:
 			this.image = gamejs.image.load('img/old.png');
-			this.characterScore = 0;
-			this.decreaseHealth = 1;
 			this.typeName = "Pensjonister får IKKE penger, hvorfor skulle de?";
 			this.group = WELFARE;
 			break;
 		case 5:
 			this.image = gamejs.image.load('img/student.png');
-			this.characterScore = 100;
-			this.decreaseHealth = 0;
 			this.typeName = "Studenter får penger, for de er Norges fremtid. BIATCH";
 			this.group = SCIENCE_EDU;
 			break;
 		case 6:
 			this.image = gamejs.image.load('img/scientist.png');
-			this.characterScore = 100;
-			this.decreaseHealth = 0;
 			this.typeName = "Vitenskap får penger, for det trengs!";
 			this.group = SCIENCE_EDU;
 			break;
@@ -149,10 +136,6 @@ Person.prototype.characterType = function() {
 
 Person.prototype.getScore = function() {
 	return this.characterScore;
-}
-
-Person.prototype.dropHealth = function() {
-	return this.decreaseHealth;
 }
 
 Person.prototype.getTypeName = function() {
