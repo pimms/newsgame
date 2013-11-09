@@ -47,7 +47,7 @@ Person.prototype.update = function( elapsed ) {
 	this.imageDimsScale[0] *= this.scaleF;
 	this.imageDimsScale[1] *= this.scaleF;
 
-	this.feet.update(elapsed);
+	this.feet.update(elapsed, this.searching);
 	
 	if(this.searching) {
 
@@ -65,9 +65,9 @@ Person.prototype.update = function( elapsed ) {
 
 
 Person.prototype.draw  = function(display) {
-	this.feet.draw(display, [this.posX, this.posY], this.imageDims, this.scaleF);
-	
 	this.rect = new gamejs.Rect([(this.posX-this.imageDimsScale[0]/2),(this.posY-this.imageDimsScale[1])],[this.imageDimsScale[0],this.imageDimsScale[1]]);
 	display.blit( this.image, this.rect, new gamejs.Rect([0,0],[this.imageDims[0],this.imageDims[1]]));
+
+	this.feet.draw(display, [this.posX, this.posY], this.imageDims, this.scaleF);
 };
 
