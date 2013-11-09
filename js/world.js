@@ -43,9 +43,8 @@ function World() {
 	}
 
 	this.update = function(msDuration) {
-		if( this.timer < 1 && !this.gameEnded ) {
+		if( score.timer < 1 && !this.gameEnded ) {
 			this.gameEnded = true;
-			
 		}
 		
 		if( !this.gameEnded ) {
