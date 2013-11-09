@@ -2,6 +2,7 @@ include_once(["feet.js"]);
 var Person = function( id) {
 	//this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
+	//this.characterScore = 0;
 	this.characterType();
 	this.posX = 200;
 	this.posY = 205;
@@ -90,12 +91,26 @@ Person.prototype.characterType = function() {
 	switch(this.id) {
 		case 0:
 			this.image = gamejs.image.load('img/siv_jensen.png');
+			this.characterScore = 100;
+			this.decreaseHealth = 0;
 			break;
 		case 1:
 			this.image = gamejs.image.load('img/artist.png');
+			this.characterScore = 0;
+			this.decreaseHealth = 1;
 			break;
 		case 2:
 			//this.image = gamejs.image.load('img/nurse.png');
+			//this.score = 100;
+			//this.decreaseHealth = 0;
 			break;
 	}
+}
+
+Person.prototype.getScore = function() {
+	return this.characterScore;
+}
+
+Person.prototype.dropHealth = function() {
+	return this.decreaseHealth;
 }
