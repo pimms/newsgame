@@ -15,9 +15,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="character_template.svg"
-   inkscape:export-filename="C:\Users\Anders\Dropbox\HiG\Semester 3\Siv_Jensen.png"
-   inkscape:export-xdpi="12.373137"
-   inkscape:export-ydpi="12.373137">
+   inkscape:export-filename="/home/pimms/code/js/newsgame/img/siv_jensen.png"
+   inkscape:export-xdpi="15.481905"
+   inkscape:export-ydpi="15.481905">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
