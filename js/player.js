@@ -6,6 +6,7 @@
 include_once(["person.js", "money.js"])
 function Player() {
 	this.person = new Person(0);
+	this.person.speed = 300;
 	this.money = new Money();
 	this.posY = this.person.posY;
 

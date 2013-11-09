@@ -11,7 +11,7 @@ var Score = function() {
 
 
 Score.prototype.update = function( elapsed ) {
-	this.multiplierBuildup -= elapsed/10;
+	this.multiplierBuildup -= elapsed/60*Math.sqrt(this.multiplier);
 	if ( this.multiplierBuildup < 0 ) {
 		this.multiplierBuildup = 0;
 		if ( this.multiplier > 1 ) {
@@ -24,7 +24,7 @@ Score.prototype.update = function( elapsed ) {
 
 Score.prototype.addScore = function( points ) {
 	this.score += points*this.multiplier;
-	this.multiplierBuildup += points;
+	this.multiplierBuildup += points*4;
 	if( this.multiplierBuildup > 1000 ) {
 		this.multiplier ++;
 		this.multiplierBuildup = 100;
