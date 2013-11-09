@@ -75,8 +75,9 @@ Person.prototype.draw  = function(display) {
 Person.prototype.onMoneyGiven = function() {
 	this.active = false;
 	this.searching = true;
-	this.goalX = -100;
-	this.goalY = -100;
+	
+	this.goalX = (this.posX > 400) ? (950) : (-100);
+	
 }
 
 Person.prototype.isDead = function() {
