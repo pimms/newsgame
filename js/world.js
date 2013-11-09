@@ -58,8 +58,12 @@ function World() {
 		this.npcArray.forEach(function(person){
 			if( person != test ) {
 				if( person.active === true && person.collision( test ) ) {
-					score.addScore(100);
+					score.addScore(person.getScore());
+					score.lives -= person.dropHealth();
 					person.onMoneyGiven();
+					alert("YOLOOOO");
+					var label = new Label(person.getTypeName());
+					label.draw();
 				}
 			}
 		});

@@ -1,7 +1,9 @@
 include_once(["feet.js"]);
 var Person = function( id) {
-	this.image = gamejs.image.load('img/siv_jensen.png');
+	//this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
+	//this.characterScore = 0;
+	this.characterType();
 	this.posX = 200;
 	this.posY = 205;
 	this.goalX = 50;
@@ -9,12 +11,13 @@ var Person = function( id) {
 	this.speed = 200;
 	this.searching = false;
 	this.scaleF = 0.5*SPRITESCALE + this.posY/100*SPRITESCALE;
+
 	this.imageDims = this.image.getSize();
 	this.imageDimsScale = this.imageDims;
 	this.active = true;
 
 	this.feet = new Feet();
-
+	
 }
 gamejs.utils.objects.extend(Person, gamejs.sprite.Sprite);
 
@@ -83,4 +86,51 @@ Person.prototype.onMoneyGiven = function() {
 
 Person.prototype.isDead = function() {
 	return !this.searching;
+}
+
+Person.prototype.characterType = function() {
+	switch(this.id) {
+		case 0:
+			this.image = gamejs.image.load('img/siv_jensen.png');
+			this.characterScore = 100;
+			this.decreaseHealth = 0;
+			this.typeName = "Siv Jensen";
+			break;
+		case 1:
+			this.image = gamejs.image.load('img/artist.png');
+			this.characterScore = 0;
+			this.decreaseHealth = 1;
+			this.typeName = "Kunstner";
+			break;
+		case 2:
+			this.image = gamejs.image.load('img/nurse.png');
+			this.characterScore = 100;
+			this.decreaseHealth = 0;
+			this.typeName = "Sykepleier";
+			break;
+		case 3:
+			this.image = gamejs.image.load('img/father.png');
+			this.characterScore = 0;
+			this.decreaseHealth = 1;
+			this.typeName = "Far";
+			break;
+		case 4:
+			this.image = gamejs.image.load('img/old.png');
+			this.characterScore = 100;
+			this.decreaseHealth = 0;
+			this.typeName = "Pensjonist";
+			break;
+	}
+}
+
+Person.prototype.getScore = function() {
+	return this.characterScore;
+}
+
+Person.prototype.dropHealth = function() {
+	return this.decreaseHealth;
+}
+
+Person.prototype.getTypeName = function() {
+	return this.typeName;
 }
