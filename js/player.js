@@ -102,31 +102,31 @@ function Player() {
 	this.collision = function( person ) {
 		return false;
 	}
-
+	
+	var touchMovement = this.person
 	// Listen for touch events yo pls
-	window.addEventListener("load", function() {
-		//alert("HIYA")
-		var canvas = document.getElementsByTagName("canvas");
-		
-		canvas.addEventListener('touchstart', function(e) {
-			var touchobj = e.changedTouches[0];
-			var touchx = parseInt(touchobj.clientX);
-			var touchy = parseInt(touchobj.clientY);
-			this.person.moveTo(touchx, touchy);
-			e.preventDefault()
-		}, false)
+	var touch = document.getElementById("gjs-canvas");
+	touch.addEventListener('touchstart', function(e) {
+		var touchobj = e.changedTouches[0];
+		var touchx = parseInt(touchobj.clientX);
+		var touchy = parseInt(touchobj.clientY);
+		touchMovement.moveTo(touchx, touchy);
+		e.preventDefault()
+	}, false)
 
-		canvas.addEventListener('touchmove', function(e) {
-			var touchobj = e.changedTouches[0];
-			var touchx = parseInt(touchobj.clientX);
-			var touchy = parseInt(touchobj.clientY);
-			this.person.moveTo(touchx, touchy);
-			e.preventDefault()
-		},false);
+	touch.addEventListener('touchmove', function(e) {
+		var touchobj = e.changedTouches[0];
+		var touchx = parseInt(touchobj.clientX);
+		var touchy = parseInt(touchobj.clientY);
+		touchMovement.moveTo(touchx, touchy);
+		e.preventDefault()
+	},false);
 		
-		canvas.addEventListener('touchend', function(e) {
-			var touchobj = e.changedTouches[0];
-			e.preventDefault();
-		},false)
-	}, false);
+	touch.addEventListener('touchend', function(e) {
+		var touchobj = e.changedTouches[0];
+		var touchx = parseInt(touchobj.clientX);
+		var touchy = parseInt(touchobj.clientY);
+		touchMovement.moveTo(touchx, touchy);
+		e.preventDefault()
+	},false)
 }

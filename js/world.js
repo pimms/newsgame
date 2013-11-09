@@ -7,12 +7,13 @@ include_once(["player.js", "spawner.js", "score.js"])
 function World() {
 	/* INIT WORLD OBJECTS HERE */
 	var score = new Score();
+	var label = new Label();
 	this.spawner = new Spawner(this);
 	this.player = new Player(0);
 	this.npcArray = new Array();
 	this.npcArray.push(this.player);
 	this.gameEnded = false;
-	
+	var currentTypeName = " ";
 
 	this.background = new gamejs.sprite.Sprite();
 	this.background.image = gamejs.image.load("img/background.png");
@@ -33,6 +34,8 @@ function World() {
 				person.draw(mainSurface);
 			});
 			score.draw(mainSurface);
+
+			label.draw(mainSurface, currentTypeName);
 		} else {
 			score.drawScore(mainSurface);
 		}
@@ -61,8 +64,8 @@ function World() {
 					score.addScore(person.getScore());
 					score.lives -= person.dropHealth();
 					person.onMoneyGiven();
-					var label = new Label(person.getTypeName());
-					label.draw();
+					currentTypeName = person.typeName;
+					//labelArray.push(person.typeName);
 				}
 			}
 		});
@@ -72,6 +75,7 @@ function World() {
 			person.update(msDuration);
 		});
 		score.update(msDuration);
+		label.update(msDuration);
 
 		// Remove dead NPCs
 		for (var i=0; i<this.npcArray.length; i++) {
