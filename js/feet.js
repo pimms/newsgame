@@ -1,11 +1,12 @@
 function Feet() {
 	this.timer = 0;
+	this.speed = 1;
 
 	this.feetpos = [[-20, 0], [20, 0]];
 
 	this.update = function(msDuration, isSearching) {
 		if (isSearching === true) {
-			this.timer += msDuration;
+			this.timer += msDuration * this.speed;
 
 			if (this.timer % 1000 < 500) {
 				this.feetpos[0][1] = -20;
