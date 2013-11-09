@@ -35,7 +35,6 @@ gamejs.ready(function() {
     gamejs.onTick(function(msDuration) {
     	world.update(msDuration);
 
-
         // Draw
         mainSurface.fill("#FFAAAA");
         world.draw(mainSurface);
