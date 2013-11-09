@@ -2,10 +2,12 @@ gamejs = require('gamejs');
 font   = require('gamejs/font');
 draw   = require("gamejs/draw");
 
-gamejs.preload(["img/background.png", "img/siv_jensen.png"]);
+gamejs.preload(["img/background.png", 
+                "img/siv_jensen.png",
+                "img/money.png"]);
 
 gamejs.ready(function() {
-    include_once(["spawner.js", "world.js", "player.js", "feet.js", "score.js"]);
+    include_once(["const.js", "spawner.js", "world.js", "player.js", "feet.js", "score.js"]);
 
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
