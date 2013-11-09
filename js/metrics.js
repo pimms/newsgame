@@ -26,13 +26,13 @@ function Metrics() {
 
 	this.recalculate = function() {
 		var total = 0;
-		for (var n in this.count) {
-			total += n;
+		for (var i=0; i<5; i++) {
+			total += this.count[i];
 		}
 
 		for (var i=0; i<5; i++) {
-			var percent = this.count[i] / total;
-			this.bars[i].current = percent;
+			var fraction = this.count[i] / total;
+			this.bars[i].current = fraction;
 		}
 	}
 }

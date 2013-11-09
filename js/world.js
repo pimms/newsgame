@@ -62,15 +62,24 @@ function World() {
 
 	this.updateGame = function(msDuration) {
 		this.spawner.update(msDuration);
+
+		// OH MY GOD I HATE JAVASCRIPT
 		var test = this.player.person;
+		var world = this;
+
 		this.npcArray.forEach(function(person){
 			if( person != test ) {
 				if( person.active === true && person.collision( test ) ) {
 					score.addScore(person.getScore());
-					//score.lives -= person.dropHealth();
+					
+					// Make the person gtfo
 					person.onMoneyGiven();
+
+					// STATISTICS, BITCH
+					world.metrics.onMoneyGiven(person.group);
+
+					// Update the label with the typename
 					currentTypeName = person.typeName;
-					//labelArray.push(person.typeName);
 				}
 			}
 		});
