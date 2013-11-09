@@ -34,7 +34,7 @@ function World() {
 			});
 			score.draw(mainSurface);
 		} else {
-			score.drawScore();
+			score.drawScore(mainSurface);
 		}
 
 	}
