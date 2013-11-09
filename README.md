@@ -12,7 +12,7 @@ Characters to be included in the game:
 
 [X] The elderly
 
-[ ] Fathers
+[X] Fathers
 
 [ ] Collective transport
 
