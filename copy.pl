@@ -5,4 +5,4 @@ system("cp -rf img $dest");
 system("cp index.html $dest");
 system("cp -rf js $dest");
 system("cp -rf public $dest");
-
+system("cp -rf audio $dest"); 
