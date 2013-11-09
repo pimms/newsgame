@@ -1,4 +1,7 @@
-include_once(["player.js", "spawner.js", "score.js"])
+include_once([	"player.js", 
+	 		 	"spawner.js", 
+	 		 	"score.js",
+	 		 	"metrics.js"])
 
  function depthCompare(a,b) {
 	return a.posY - b.posY;
@@ -9,6 +12,7 @@ function World() {
 	var score = new Score();
 	var label = new Label();
 	this.spawner = new Spawner(this);
+	this.metrics = new Metrics();
 	this.player = new Player(0);
 	this.npcArray = new Array();
 	this.npcArray.push(this.player);
@@ -57,6 +61,7 @@ function World() {
 
 	this.updateGame = function(msDuration) {
 		this.spawner.update(msDuration);
+		this.metrics.update(msDuration);
 		var test = this.player.person;
 		this.npcArray.forEach(function(person){
 			if( person != test ) {
