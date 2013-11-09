@@ -6,9 +6,12 @@ Games for News Jam, November 8-10 2013
 
 Characters to be included in the game:
 ###
+
+[ ] Police (GETS MONEY)
+
 [X] Artist (GETS LESS MONEY)
 
-[X] Nurse (DUNNO)
+[X] Nurse (GETS MORE)
 
 [X] The elderly (GETS MONEY)
 

@@ -1,4 +1,4 @@
-include_once(["player.js", "spawner.js"])
+include_once(["player.js", "spawner.js", "score.js"])
 
  function depthCompare(a,b) {
 	return a.posY - b.posY;
