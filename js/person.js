@@ -6,9 +6,9 @@ var Person = function( id) {
 	this.posY = 205;
 	this.goalX = 50;
 	this.goalY = 70;
-	this.speed = 100;
+	this.speed = 200;
 	this.searching = false;
-	this.scaleF = 0.5 + 0.5*this.posY/100;
+	this.scaleF = 0.5*SPRITESCALE + this.posY/100*SPRITESCALE;
 	this.imageDims = this.image.getSize();
 	this.imageDimsScale = this.imageDims;
 	this.active = true;
@@ -42,7 +42,7 @@ Person.prototype.collision = function( person ) { //The function 'collision' tha
 
 Person.prototype.update = function( elapsed ) {
 
-	this.scaleF = 0.5*0.5 + 0.5*this.posY/100 * 0.5;
+	this.scaleF = 0.5*SPRITESCALE + 0.5*this.posY/100 * SPRITESCALE;
 	this.imageDims = this.image.getSize();
 	this.imageDimsScale = this.image.getSize();
 	this.imageDimsScale[0] *= this.scaleF;
@@ -77,4 +77,8 @@ Person.prototype.onMoneyGiven = function() {
 	this.searching = true;
 	this.goalX = -100;
 	this.goalY = -100;
+}
+
+Person.prototype.isDead = function() {
+	return !this.searching;
 }

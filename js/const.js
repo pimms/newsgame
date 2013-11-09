@@ -7,3 +7,5 @@
 
 LEFT = -1;
 RIGHT = 1;
+
+SPRITESCALE = 0.25;

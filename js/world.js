@@ -18,7 +18,6 @@ function World() {
 
 	this.onEvent = function(event) {
 		this.player.handleEvent(event);
-
 	}
 
 	this.draw = function(mainSurface) {
@@ -53,6 +52,14 @@ function World() {
 			person.update(msDuration);
 		});
 		score.update(msDuration);
+
+		// Remove dead NPCs
+		for (var i=0; i<this.npcArray.length; i++) {
+			var person = this.npcArray[i];
+			if (person != this.player && person.isDead()) {
+				this.npcArray.splice(i--, 1);
+			}
+		}
 	}
 
 	this.addNPC = function(person) {

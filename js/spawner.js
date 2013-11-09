@@ -19,10 +19,14 @@ function Spawner(world) {
 
 	this.spawnPerson = function() {
 		var person = new Person(0);
-		person.posX = 50;
-		person.posY = 300+100*Math.random();;
-		person.goalX = 850;
-		person.goalY = 300+100*Math.random();
+
+		var leftToRight = (Math.random() > 0.5);
+
+		person.posX  = (leftToRight) ? (-100) : ( 950);
+		person.goalX = (leftToRight) ? ( 950) : (-100);
+
+		person.posY = 120+(600-120)*Math.random();;
+		person.goalY = 120+(600-120)*Math.random();
 		person.searching = true;
 
 		// Add the person to the world

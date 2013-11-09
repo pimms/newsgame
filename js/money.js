@@ -35,13 +35,13 @@ function Money() {
 	this.update = function(msDuration) {
 		if (this.direction == LEFT) {
 			this.rect.left = this.position[0] - this.imageDims[0] * 0.5 * this.scaleF;
-			this.rect.top = this.position[1] + 10;
+			this.rect.top = this.position[1] + 7;
 		} else {
 			this.rect.left = this.position[0] + this.imageDims[0] * 0.5 * this.scaleF;
-			this.rect.top = this.position[1] + 10;
+			this.rect.top = this.position[1] + 7;
 		}
 
-		this.scaleF = 0.5*0.5 + 0.5*this.rect.top/100 * 0.5;
+		this.scaleF = 0.5*SPRITESCALE + 0.5*this.rect.top/100 * SPRITESCALE;
 		this.imageDims = this.image.getSize();
 		this.imageDimsScale = this.image.getSize();
 		this.imageDimsScale[0] *= this.scaleF;
