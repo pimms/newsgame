@@ -6,6 +6,7 @@
 include_once(["person.js", "money.js"])
 function Player() {
 	this.person = new Person(0);
+	this.person.speed = 300;
 	this.money = new Money();
 	this.posY = this.person.posY;
 
@@ -15,6 +16,7 @@ function Player() {
 
 
 	this.handleEvent = function(event) {
+	
 		if (event.type === gamejs.event.MOUSE_DOWN) {
 			this.mouseButtonDown = true;
 		} else if (event.type === gamejs.event.MOUSE_UP) {
@@ -56,6 +58,7 @@ function Player() {
 				this.keysDown[idx] = (event.type === gamejs.event.KEY_DOWN);
 			}
 		}
+		
 	}
 	
 
@@ -102,9 +105,10 @@ function Player() {
 
 	// Listen for touch events yo pls
 	window.addEventListener("load", function() {
-		var canvas = document.getElementsByTagName("canvas")[0];
+		//alert("HIYA")
+		var canvas = document.getElementsByTagName("canvas");
 		
-		canvas.addEventListener("touchstart", function(e) {
+		canvas.addEventListener('touchstart', function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
@@ -112,7 +116,7 @@ function Player() {
 			e.preventDefault()
 		}, false)
 
-		vas.addEventListener("touchmove", function(e) {
+		canvas.addEventListener('touchmove', function(e) {
 			var touchobj = e.changedTouches[0];
 			var touchx = parseInt(touchobj.clientX);
 			var touchy = parseInt(touchobj.clientY);
@@ -120,7 +124,7 @@ function Player() {
 			e.preventDefault()
 		},false);
 		
-		canvas.addEventListener("touchend", function(e) {
+		canvas.addEventListener('touchend', function(e) {
 			var touchobj = e.changedTouches[0];
 			e.preventDefault();
 		},false)

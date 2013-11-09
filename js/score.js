@@ -3,7 +3,7 @@ var Score = function() {
 	this.score = new Number(0);
 	this.posX = 40;
 	this.posY = 40;
-	this.multiplier = 13;
+	this.multiplier = 1;
 	this.multiplierBuildup = 0;
 	this.lives = 5;
 	this.image = gamejs.image.load('img/lives.png');
@@ -11,7 +11,7 @@ var Score = function() {
 
 
 Score.prototype.update = function( elapsed ) {
-	this.multiplierBuildup -= elapsed/10;
+	this.multiplierBuildup -= elapsed/60*Math.sqrt(this.multiplier);
 	if ( this.multiplierBuildup < 0 ) {
 		this.multiplierBuildup = 0;
 		if ( this.multiplier > 1 ) {
@@ -24,7 +24,7 @@ Score.prototype.update = function( elapsed ) {
 
 Score.prototype.addScore = function( points ) {
 	this.score += points*this.multiplier;
-	this.multiplierBuildup += points;
+	this.multiplierBuildup += points*9/Math.sqrt(this.multiplier);
 	if( this.multiplierBuildup > 1000 ) {
 		this.multiplier ++;
 		this.multiplierBuildup = 100;
