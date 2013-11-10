@@ -102,7 +102,7 @@ Person.prototype.characterType = function() {
 			break;
 		case 1:
 			this.image = gamejs.image.load('img/artist.png');
-			this.typeName = "Kunstnere, HAH! De er ubrukelige som få!";
+			this.typeName = "Kunstnere: dette spillet kunne trengt noen!";
 			this.group = CULTURE;
 			break;
 		case 2:
