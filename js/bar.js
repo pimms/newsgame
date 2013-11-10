@@ -19,17 +19,27 @@ function Bar(subtype) {
 					), 10);
 
 		// Draw the bar itself
-		draw.rect(	surface, "#FF0000",
+		var actualLength = this.current;
+		if (actualLength > BAR_CUTOFF) {
+			actualLength = BAR_CUTOFF;
+		}
+
+		var distance = Math.abs(actualLength - this.current) * 3;
+		if (distance > 1) distance = 1;
+		var fillColor = "rgb("+ distance*255+","+(1-distance)*255+",0)";
+		console.log(actualLength + ", " + this.current + ", " + fillColor + ", " + distance);
+
+		draw.rect(	surface, fillColor,
 					new gamejs.Rect(
 						[position[0]+5, position[1]], 
-						[this.current * 100, 0]
+						[actualLength / BAR_CUTOFF * 100, 0]
 					), 10);
 
 		// Draw the target indicator
 		draw.line(surface, "#000", 
-					[position[0] + 5 + this.target*100, 
+					[position[0] + 5 + this.target/BAR_CUTOFF*100, 
 						position[1] + 5],
-					[position[0] + 5 + this.target*100, 
+					[position[0] + 5 + this.target/BAR_CUTOFF*100, 
 						position[1] - 5], 3);
 
 		// Draw the TEXTTTTTTTTTTTT

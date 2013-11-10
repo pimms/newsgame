@@ -23,8 +23,10 @@
     <script src="./public/gamejs.min.js"></script>
     <script src="./public/utils.js"></script>
     <script>
+	function startGame() {
         require.setModuleRoot('./js/');
         require.run('main');
+	}
     </script>
 </head>
 <!-- Html -->
@@ -32,8 +34,13 @@
     <div>
         <div id="gjs-loader">
          Loading...
-        </div
+        </div>
+        
+        <div>
         <canvas id="gjs-canvas"></canvas>
+        <button onClick = "this.style.visibility= 'hidden';startGame()" type="button">Start Game</button>
+        </div>
+       
         <p>
         Powered by <a href="http://gamejs.org">GameJs</a>.
         </p>
