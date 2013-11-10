@@ -54,10 +54,14 @@ function Spawner(world) {
 	}
 
 	this.randomCharacter = function() {
+<<<<<<< HEAD
+		var id = Math.floor((Math.random() * 10) + 1);
+=======
 		var id = Math.ceil(Math.random() * 12);
 		if ( id > 6 ) {
 			id = this.spawnFocus[this.spawnerFocusIndex];
 		}
+>>>>>>> e38938c42ee2772b6bd2d4d1c48cabf3f14ec07c
 		return id;
 	}
 }

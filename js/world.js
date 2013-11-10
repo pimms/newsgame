@@ -40,6 +40,7 @@ function World() {
 			score.draw(mainSurface);
 
 			label.draw(mainSurface, currentTypeName);
+			this.spawner.draw(mainSurface);
 			this.metrics.draw(mainSurface);
 		} else {
 			score.drawScore(mainSurface);
