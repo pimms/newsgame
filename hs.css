@@ -1,0 +1,36 @@
+.body {
+	position: relative;
+}
+
+#gamewrapper {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.gameoverlay {
+	background-color: #AAAAAA;
+    position: absolute;
+
+   	left: 50%;
+   	top: 50%;
+
+   	width: 600px;
+   	height: 400px;
+
+   	margin-left: -300px;
+   	margin-top: -250px;
+
+   	padding: 50px;
+
+   	border-radius: 25px;
+    
+   	background: -webkit-linear-gradient(#87dff5 0%, #54a5d8 100%);
+}
+
+#listwrapper {
+	width: 500px;
+	height: 350px;
+	background-color: #00FF00;
+	margin-bottom: 25px;
+	margin-top: 20px;
+}

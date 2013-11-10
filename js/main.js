@@ -32,7 +32,8 @@ gamejs.ready( function(){
                   "score.js",
                   "label.js",
                   "metrics.js",
-                  "bar.js"]);
+                  "bar.js",
+                  "highscore.js"]);
 
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
@@ -46,10 +47,11 @@ gamejs.ready( function(){
     });
 
     gamejs.onTick(function(msDuration) {
-    	world.update(msDuration);
-
-        // Draw
-        mainSurface.fill("#FFAAAA");
-        world.draw(mainSurface);
+    	if (!world.gameEnded) {
+	    	world.update(msDuration);
+	
+	        // Draw
+	        world.draw(mainSurface);
+        }
     });
 });

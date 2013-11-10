@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
     <title>GameJS Application</title>
 <!-- Styling -->
-    <style type=text/css>
+    <link href="hs.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css" media="all">
         body{
            background:#fff;
            color:#222;
@@ -12,9 +14,9 @@
            padding:0;
         }
         #gjs-loader {
-            width: 50%;
-            height: 50%;
-            background: url('./public/ajax-loader.gif');
+            width: 800px;
+            height: 600px;
+            background: url('./img/background.png');
         }
     </style>
 
@@ -24,26 +26,66 @@
     <script src="./public/utils.js"></script>
     <script>
 	function startGame() {
+		$("#tutorial").remove();
         require.setModuleRoot('./js/');
         require.run('main');
+	}
+	
+	function restartGame() {
+		location.reload();
 	}
     </script>
 </head>
 <!-- Html -->
 <body>
-    <div>
-        <div id="gjs-loader">
-         Loading...
+    <div id="gamewrapper">
+        <div id="gjs-loader"></div>
+        <canvas id="gjs-canvas"></canvas>
+        </div>
+
+        <div id="tutorial">
+	        <div class="gameoverlay"> 
+	            Play the mothaflippin' game <br/>
+	            <button onClick = "startGame()" type="button">Start Game</button>
+	        </div>
         </div>
         
-        <div>
-        <canvas id="gjs-canvas"></canvas>
-        <button onClick = "this.style.visibility= 'hidden';startGame()" type="button">Start Game</button>
+        <div id="highscore" style="visibility: hidden;">
+        	<div class="gameoverlay">
+        		HIIIISCOOOOOORRREEEES:::<br/>
+        		<div id="listwrapper"> </div>
+        		<button onClick = "restartGame()"> New game </button>
+        	</div>
         </div>
-       
-        <p>
-        Powered by <a href="http://gamejs.org">GameJs</a>.
-        </p>
+
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
