@@ -13,7 +13,7 @@ function Spawner(world) {
 	this.image = gamejs.image.load('img/symbolSheet.png');
 	
 	for ( var i = 0 ; i < 12 ; i++ ) {
-		this.spawnFocus[i] = Math.floor((Math.random() * 6) + 1);
+		this.spawnFocus[i] = Math.floor((Math.random() * 10) + 1);
 	}
 	
 	this.draw = function( display ) {
