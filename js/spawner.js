@@ -10,6 +10,7 @@ function Spawner(world) {
 	this.spawnerFocusIndex = 0;
 	this.spawnerFocusTimer = 0;
 	this.spawnFocus = new Array();
+	this.image = gamejs.image.load('img/sumbolSheet.png');
 	
 	for ( var i = 0 ; i < 12 ; i++ ) {
 		this.spawnFocus[i] = Math.floor((Math.random() * 6) + 1);
@@ -18,6 +19,7 @@ function Spawner(world) {
 	this.draw = function( display ) {
 		for ( var i = this.spawnerFocusIndex ; i < 12 ; i++ ) {
 			display.blit((new gamejs.font.Font('30px Sans-serif')).render( this.spawnFocus[i].toString() ), new gamejs.Rect([500+20*i,100]));
+			display.blit( this.image, new gamejs.Rect([128+128*this.spawnFocus[i],0], new gamejs.Rect([500+20*i,100]));
 		}
 	}
 
@@ -54,7 +56,7 @@ function Spawner(world) {
 	}
 
 	this.randomCharacter = function() {
-		var id = Math.ceil(Math.random() * 12);
+		var id = Math.ceil(Math.random() * 20);
 		if ( id > 6 ) {
 			id = this.spawnFocus[this.spawnerFocusIndex];
 		}
