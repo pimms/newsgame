@@ -21,7 +21,11 @@ function Player() {
 			this.mouseButtonDown = true;
 		} else if (event.type === gamejs.event.MOUSE_UP) {
 			this.mouseButtonDown = false;
-		} else if(event.type === gamejs.event.MOUSE_MOTION && this.mouseButtonDown) {
+		}
+
+		if(	(event.type === gamejs.event.MOUSE_DOWN || 
+			 event.type === gamejs.event.MOUSE_MOTION) 
+					&& this.mouseButtonDown) {
 			if(event.pos[1] < this.posY) {
 				this.person.moveTo(event.pos[0], event.pos[1]+35);
 			}
