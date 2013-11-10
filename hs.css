@@ -23,4 +23,6 @@
    	padding: 50px;
 
    	border-radius: 25px;
+    
+   	background: -webkit-linear-gradient(#87dff5 0%, #54a5d8 100%);
 }

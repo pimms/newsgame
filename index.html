@@ -14,9 +14,9 @@
            padding:0;
         }
         #gjs-loader {
-            width: 50%;
-            height: 50%;
-            background: url('./public/ajax-loader.gif');
+            width: 800px;
+            height: 600px;
+            background: url('./img/background.png');
         }
     </style>
 
@@ -26,6 +26,8 @@
     <script src="./public/utils.js"></script>
     <script>
 	function startGame() {
+		$("#gameoverlay").remove();
+		
         require.setModuleRoot('./js/');
         require.run('main');
 	}
@@ -34,17 +36,43 @@
 <!-- Html -->
 <body>
     <div id="gamewrapper">
-        <div id="gjs-loader"> Loading... </div>
+        <div id="gjs-loader"></div>
         <canvas id="gjs-canvas"></canvas>
-        <button onClick = "this.style.visibility= 'hidden';startGame()" type="button">Start Game</button>
         </div>
-        <!--
+
         <div id="gameoverlay"> 
-            Heisann sveisann
-            <br/>
-            hvordan går det med degsann
+            Play the mothaflippin' game <br/>
+            <button onClick = "startGame()" type="button">Start Game</button>
         </div>
-        -->
+
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
