@@ -9,7 +9,7 @@ function Metrics() {
 		this.bars[i] = new Bar(i);
 		
 		this.bars[i].position = [
-			10, 200 + 40*i
+			7 + 170 * i, 480
 		];
 	}
 
