@@ -37,4 +37,4 @@ SUBGROUP_NAMES = [
 			"Forskning og utdanning", 
 			"Helse",
 			"Velferd"];
-BAR_CUTOFF = 0.3;
+BAR_CUTOFF = 0.4;
