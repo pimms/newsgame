@@ -6,10 +6,10 @@ var Score = function() {
 	this.multiplier = 1;
 	this.multiplierBuildup = 0;
 	
-	/* IF THIS IS STILL 10, I FORGOT TO CHANGE IT BACK TO 120. 
+	/* IF THIS IS STILL 3, I FORGOT TO CHANGE IT BACK TO 120. 
 	 * Best regards, Anders. 
 	 */
-	this.timer = 120*1000;
+	this.timer = 3*1000;
 };
 
 

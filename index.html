@@ -27,9 +27,12 @@
     <script>
 	function startGame() {
 		$("#tutorial").remove();
-		
         require.setModuleRoot('./js/');
         require.run('main');
+	}
+	
+	function restartGame() {
+		location.reload();
 	}
     </script>
 </head>
@@ -50,6 +53,7 @@
         <div id="highscore" style="visibility: hidden;">
         	<div class="gameoverlay">
         		HIIIISCOOOOOORRREEEE
+        		<button onClick = "restartGame()"> New game </button>
         	</div>
         </div>
 
