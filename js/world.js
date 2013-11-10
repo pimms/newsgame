@@ -51,7 +51,7 @@ function World() {
 		if( score.timer < 1 && !this.gameEnded ) {
 			this.gameEnded = true;
 			
-			displayHighScore(100, this.metrics);
+			displayHighScore(score.score, this.metrics);
 		}
 		
 		if( !this.gameEnded ) {

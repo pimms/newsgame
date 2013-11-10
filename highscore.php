@@ -9,7 +9,7 @@ function postScore() {
 	$score = $_POST["score"];
 	$hash = $_POST["hash"];
 
-	$localHash = md5($name + $score + "SUPERSECRET");
+	$localHash = md5($name + $score + "SPICEGIRLS");
 	if ($localHash != $hash) {
 		die("haxx0r");
 	}
