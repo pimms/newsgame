@@ -1,3 +1,5 @@
+
+
 function Bar(subtype) {
 	this.subtype = subtype;
 	this.position = [0, 0];
@@ -26,8 +28,12 @@ function Bar(subtype) {
 
 		var distance = Math.abs(actualLength - this.current) * 3;
 		if (distance > 1) distance = 1;
-		var fillColor = "rgb("+ distance*255+","+(1-distance)*255+",0)";
-		console.log(actualLength + ", " + this.current + ", " + fillColor + ", " + distance);
+		var fillColor = "rgb(0, 255, 0)";
+		//var fillColor = "rgb(" + (distance * 255) + "," + ((1 - distance) * 255) + ",0)";
+		//var hexColor = "#" + Math.floor((distance * 255)).toString(16) + Math.floor(((1 - distance) * 255)).toString(16) + (0).toString(16);
+		//console.log(actualLength + ", " + this.current + ", " + fillColor + ", " + distance);
+		//console.log(fillColor + ", " + hexColor);
+		//console.log(test);
 
 		draw.rect(	surface, fillColor,
 					new gamejs.Rect(
