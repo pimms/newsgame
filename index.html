@@ -10,8 +10,7 @@
         body{
            background:#fff;
            color:#222;
-           margin:1em 0 2em 6em;
-           padding:0;
+           /*margin:1em 0 2em 6em;*/
         }
         #gjs-loader {
             width: 800px;
@@ -42,36 +41,35 @@
     <div id="gamewrapper">
         <div id="gjs-loader"></div>
         <canvas id="gjs-canvas"></canvas>
-        </div>
 
-        <div id="tutorial">
-	    	<button onClick = "startGame()" type="button">Start spillet!</button>
-        </div>
-        
-        <div id="highscore" style="visibility: hidden;">
-        	<div class="gameoverlay">
-        		HIIIISCOOOOOORRREEEES:::<br/>
-        		<div id="listwrapper">
-	        		<input type="text" id="usernameinput" />
-	        		<button onclick="submitScore()">Last opp</button>
+		<div id="tutorial">
+			<button onClick = "startGame()" type="button">Start spillet!</button>
+		</div>
+		
+		<div id="highscore" style="visibility: hidden;">
+			<div class="gameoverlay">
+				scoreboard<br/>
+				<div id="listwrapper">
+		    		<input type="text" id="usernameinput" />
+		    		<button onclick="submitScore()">Last opp</button>
 					
-	        		<div id="usernameerror"></div>
-        		</div>
-        	</div>
-        </div>
-        
-        <div id="credits">
-	        <h3>Musikk:</h3>
-	        Thomas Hartmann<br/><br/>
-	        <h3>Programmering, spilldesign og grafikk:</h3>
-	        Anders Gjelsvik<br/>
-	        Asbjørn Løvlie Meyer<br/>
-	        Camilla Merete Ødegaard<br/>
-	        Joakim Nordstrand Stien<br/>
-	        Sindre Helleborg<br/><br/>
-	        Spillet er utviklet med <a href="http://gamejs.org">Game.JS</a>.
-        </div>
-    </div>
+		    		<div id="usernameerror"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="credits">
+		    <h3>Musikk:</h3>
+		    Thomas Hartmann<br/><br/>
+		    <h3>Programmering, spilldesign og grafikk:</h3>
+		    Anders Gjelsvik<br/>
+		    Asbjørn Løvlie Meyer<br/>
+		    Camilla Merete Ødegaard<br/>
+		    Joakim Nordstrand Stien<br/>
+		    Sindre Helleborg<br/><br/>
+		    Spillet er utviklet med <a href="http://gamejs.org">Game.JS</a>.
+		</div>
+	</div>
 </body>
 </html>
 
