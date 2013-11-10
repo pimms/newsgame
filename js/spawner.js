@@ -21,6 +21,11 @@ function Spawner(world) {
 			//display.blit( this.image, new gamejs.Rect([520+55*i,50],[64,64]), new gamejs.Rect([128*(this.spawnFocus[i+this.spawnerFocusIndex]%5),128*Math.floor(this.spawnFocus[i+this.spawnerFocusIndex]/5)],[128,128]));
 		}
 	}
+	this.draw = function( display ) {
+		for ( var i = 0 ; i < 5 ; i++ ) {
+			display.blit( this.image, new gamejs.Rect([170*i,500],[128,64]), new gamejs.Rect([256*i,0],[256,128]));
+		}
+	}
 
 	this.update = function(msDuration) {
 		this.timer += msDuration;

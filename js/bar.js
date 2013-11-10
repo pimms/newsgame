@@ -39,7 +39,7 @@ function Bar(subtype) {
 						position[1] + 105], 3);
 
 		// Draw the TEXTTTTTTTTTTTT
-		var textpos = [position[0], position[1] + 75];
-		surface.blit((new gamejs.font.Font("12px Sans-serif")).render(this.name), new gamejs.Rect(textpos));
+		//var textpos = [position[0], position[1] + 75];
+		//surface.blit((new gamejs.font.Font("12px Sans-serif")).render(this.name), new gamejs.Rect(textpos));
 	}
 }
