@@ -7,8 +7,30 @@
 	margin: 0 auto;
 }
 
+#tutorial {
+	position: absolute;
+	left: 50%;
+   	top: 50%;
+   	
+   	width: 800px;
+   	height: 600px;
+   	margin-left: -400px;
+   	margin-top: -300px;
+   	
+   	background-image: url("img/loading_screen.png");
+   	background-repeat: no-repeat;
+}
+
+#tutorial button {
+	position: relative;
+	left: 400px;
+	top: 300px;
+	width: 100px;
+	height: 60px;
+}
+
 .gameoverlay {
-	background-color: #AAAAAA;
+	background-color:#AAAAAA;
     position: absolute;
 
    	left: 50%;
