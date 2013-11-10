@@ -6,10 +6,10 @@ function reloadScores() {
 		
 		var list = $("#listwrapper");
 		list.empty();
-		list.append('<table>');
+		list.append('<table width="100%">');
 		
 		var table = $("#listwrapper table");
-		table.append("<tr><td><b>Plass</b></td><td><b>Navn</b></td><td><b>Score</b></td></tr>");
+		table.append('<tr><td width="10%"><b>Plass</b></td><td><b>Navn</b></td><td><b>Score</b></td></tr>');
 		
 		for (var i=0; i<array.length/3; i++) {
 			var row = "<tr>";
