@@ -133,7 +133,7 @@ Person.prototype.characterType = function() {
 		case 7:
 			this.image = gamejs.image.load('img/construction_worker.png');
 			this.typeName = "Flere veier har vi bruk for!";
-			this.group = TRANSPORT;
+			this.group = INFRASTRUCTURE;
 			break;
 		case 8:
 			this.image = gamejs.image.load('img/doctor.png');
