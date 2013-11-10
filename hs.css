@@ -1,0 +1,26 @@
+.body {
+	position: relative;
+}
+
+#gamewrapper {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#gameoverlay {
+	background-color: #AAAAAA;
+    position: absolute;
+
+   	left: 50%;
+   	top: 50%;
+
+   	width: 600px;
+   	height: 400px;
+
+   	margin-left: -300px;
+   	margin-top: -250px;
+
+   	padding: 50px;
+
+   	border-radius: 25px;
+}
