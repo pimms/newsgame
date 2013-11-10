@@ -24,9 +24,9 @@ function Bar(subtype) {
 		if (distance > 1) distance = 1;
 		var fillColor = "rgb(0, 255, 0)";
 
-		if(Math.abs(this.current - this.target) > 0.06) {
+		if(Math.abs(this.current - this.target) > 0.1) {
 			fillColor = "rgb(255, 0, 0)";
-		} else if(Math.abs(this.current - this.target) > 0.03) {
+		} else if(Math.abs(this.current - this.target) > 0.05) {
 			fillColor = "rgb(255, 127, 0)";
 		} else {
 			fillColor = "rgb(0, 255, 0)";
