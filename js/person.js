@@ -3,7 +3,7 @@ var Person = function( id) {
 	//this.image = gamejs.image.load('img/siv_jensen.png');
 	this.id = id;
 	this.group = 0;
-	this.characterScore = 100;
+	this.characterScore = 10;
 	this.characterType();
 
 	this.posX = 200;
