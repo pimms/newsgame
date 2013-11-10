@@ -50,7 +50,6 @@ gamejs.ready( function(){
 	    	world.update(msDuration);
 	
 	        // Draw
-	        mainSurface.fill("#FFAAAA");
 	        world.draw(mainSurface);
         }
     });
