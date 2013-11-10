@@ -102,7 +102,7 @@ Person.prototype.characterType = function() {
 			break;
 		case 1:
 			this.image = gamejs.image.load('img/artist.png');
-			this.typeName = "Kunstnere, HAH! De er ubrukelige som få!";
+			this.typeName = "Kunstnere gjør hverdagen litt mer fargerik!";
 			this.group = CULTURE;
 			break;
 		case 2:
@@ -133,7 +133,7 @@ Person.prototype.characterType = function() {
 			break;
 		case 7:
 			this.image = gamejs.image.load('img/construction_worker.png');
-			this.typeName = "Uten konstruksjonsarbeidere hadde vi fortsatt bodd i huler!";
+			this.typeName = "Uten konstruksjonsarbeidere hadde vi bodd i huler!";
 			this.group = INFRASTRUCTURE;
 			break;
 		case 8:
