@@ -24,8 +24,12 @@ function Bar(subtype) {
 		if (distance > 1) distance = 1;
 		var fillColor = "rgb(0, 255, 0)";
 
-		if(this.current - this.target > 0) {
+		if(Math.abs(this.current - this.target) > 0.06) {
 			fillColor = "rgb(255, 0, 0)";
+		} else if(Math.abs(this.current - this.target) > 0.03) {
+			fillColor = "rgb(255, 127, 0)";
+		} else {
+			fillColor = "rgb(0, 255, 0)";
 		}
 
 		draw.rect(	surface, fillColor, new gamejs.Rect([position[0] + 5, position[1] + 100], [actualLength / BAR_CUTOFF * 100, 0]), 10);
