@@ -20,6 +20,7 @@
         }
     </style>
 
+    <script src="./public/md5.js"></script>
     <script src="./public/jquery-1.8.2.js"></script>
     <script src="./public/yabble.js"></script>
     <script src="./public/gamejs.min.js"></script>
@@ -53,11 +54,26 @@
         <div id="highscore" style="visibility: hidden;">
         	<div class="gameoverlay">
         		HIIIISCOOOOOORRREEEES:::<br/>
-        		<div id="listwrapper"> HEISANN SVEISANN </div>
-        		<button onClick = "restartGame()"> New game </button>
+        		<div id="listwrapper">
+	        		<input type="text" id="usernameinput" />
+	        		<button onclick="submitScore()">Last opp</button>
+					
+	        		<div id="usernameerror"></div>
+        		</div>
         	</div>
         </div>
-
+        
+        <div id="credits">
+	        <h3>Musikk:</h3>
+	        Thomas Hartmann<br/><br/>
+	        <h3>Programmering, spilldesign og grafikk:</h3>
+	        Anders Gjelsvik<br/>
+	        Asbjørn Løvlie Meyer<br/>
+	        Camilla Merete Ødegaard<br/>
+	        Joakim Nordstrand Stien<br/>
+	        Sindre Helleborg<br/><br/>
+	        Spillet er utviklet med <a href="http://gamejs.org">Game.JS</a>.
+        </div>
     </div>
 </body>
 </html>
