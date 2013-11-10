@@ -15,6 +15,7 @@ gamejs.preload(["img/background.png",
                 "img/construction_worker.png",
                 "img/police.png",
                 "img/viking.png",
+				"img/symbolSheet.png",
 				        "audio/music.ogg",
                 "audio/buzz.ogg", 
                 "audio/coin.ogg"
