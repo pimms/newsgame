@@ -58,9 +58,9 @@ function calculateScore(rawScore, metrics) {
 	for ( var i = 0 ; i<5 ; i++) {
 		precision += (Math.abs(1-metrics.bars[i].current/metrics.bars[i].target));
 	}
-
+	this.scoreMultiplier = Math.floor(1 + 75/(Math.pow(3, precision)));
 	
-	global_score = rawScore * (1 + 75/(Math.pow(3, precision))); //Math.pow(100, precision).toString()
+	global_score = rawScore * this.scoreMultiplier;
 	global_score = Math.floor(global_score);
 	return global_score;
 }
@@ -69,5 +69,7 @@ function displayHighScore(rawScore, metrics) {
 	$("#highscore").css("visibility", "visible");
 	
 	var score = calculateScore(rawScore, metrics);
-	$("#listwrapper").prepend("<h3>Du fikk " + score + " poeng!</h3>");
+	$("#listwrapper").prepend("<h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsppoeng : " + rawScore + 
+							  "<br> Presisjons Bonus * "+ this.scoreMultiplier + 
+							  "<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsppoengsum = " +score+ "</h3>");
 }
