@@ -123,7 +123,7 @@ Person.prototype.characterType = function() {
 			
 		case 5:
 			this.image = gamejs.image.load('img/student.png');
-			this.typeName = "Studenter får penger, for de er Norges fremtid. BIATCH";
+			this.typeName = "Studenter får penger, for de er Norges fremtid.";
 			this.group = SCIENCE_EDU;
 			break;
 		case 6:
