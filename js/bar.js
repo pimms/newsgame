@@ -4,7 +4,7 @@ function Bar(subtype) {
 
 	this.name = SUBGROUP_NAMES[subtype];
 	this.target = SUBGROUP_TARGETS[subtype];
-	this.current = 0.5;
+	this.current = 0;
 
 	this.draw = function(surface) {
 		var position = this.position;

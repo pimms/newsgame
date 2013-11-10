@@ -130,6 +130,21 @@ Person.prototype.characterType = function() {
 			this.typeName = "Vitenskap får penger, for det trengs!";
 			this.group = SCIENCE_EDU;
 			break;
+		case 7:
+			this.image = gamejs.image.load('img/construction_worker.png');
+			this.typeName = "Flere veier har vi bruk for!";
+			this.group = INFRASTRUCTURE;
+			break;
+		case 8:
+			this.image = gamejs.image.load('img/doctor.png');
+			this.typeName = "Leger er et \"must\"!";
+			this.group = HEALTH;
+			break;
+		case 9:
+			this.image = gamejs.image.load('img/police.png');
+			this.typeName = "Polti trøng åss!";
+			this.group = WELFARE;
+			break;
 	}
 }
 
