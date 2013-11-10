@@ -54,12 +54,13 @@ function submitScore() {
 }
 
 function calculateScore(rawScore, metrics) {
-	var precision = 1/6;
+	var precision = 1/5;
 	for ( var i = 0 ; i<5 ; i++) {
-		precision += (1-Math.abs(1-metrics.bars[i].current/metrics.bars[i].target))/6;
+		precision += (1-Math.abs(1-metrics.bars[i].current/metrics.bars[i].target))/5;
 	}
 
-	global_score = rawScore * (1 + 10^precision);
+	global_score = rawScore * (10^precision);
+	//console.log(precision.toString());
 	return global_score;
 }
 
