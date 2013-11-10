@@ -29,8 +29,19 @@
 
 #listwrapper {
 	width: 500px;
-	height: 350px;
-	background-color: #00FF00;
+	height: 300px;
 	margin-bottom: 25px;
 	margin-top: 20px;
+	
+	background-color: #888;
+	border-radius: 7px;
+	padding: 15px;
+}
+
+#listwrapper table {
+	margin: auto;
+}
+
+#credits {
+	text-align: center;
 }
