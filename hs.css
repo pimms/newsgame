@@ -7,7 +7,7 @@
 	margin: 0 auto;
 }
 
-#gameoverlay {
+.gameoverlay {
 	background-color: #AAAAAA;
     position: absolute;
 
