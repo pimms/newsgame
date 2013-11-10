@@ -9,18 +9,20 @@ gamejs.preload(["img/background.png",
                 "img/nurse.png",
                 "img/father.png",
                 "img/old.png",
-				"img/student.png",
-				"img/scientist.png",
+				        "img/student.png",
+				        "img/scientist.png",
                 "img/doctor.png",
                 "img/construction_worker.png",
                 "img/police.png",
                 "img/viking.png",
-				"audio/music.ogg",
+				        "audio/music.ogg",
                 "audio/buzz.ogg", 
-                "audio/coin.ogg"]);
+                "audio/coin.ogg"
+                ]);
 
 gamejs.ready( function(){
-    include_once(["const.js", 
+
+  include_once([  "const.js", 
                   "spawner.js", 
                   "world.js", 
                   "money.js",

@@ -34,7 +34,7 @@ function Spawner(world) {
 	}
 
 	this.randomCharacter = function() {
-		var id = Math.floor((Math.random() * 6) + 1);
+		var id = Math.floor((Math.random() * 10) + 1);
 		return id;
 	}
 }

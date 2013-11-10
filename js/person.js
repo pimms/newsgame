@@ -151,7 +151,6 @@ Person.prototype.characterType = function() {
 			this.typeName = "Vitenskap får penger, for det trengs!";
 			this.group = INFRASTRUCTURE;
 			break;
-		}
 	}
 }
 
