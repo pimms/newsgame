@@ -22,6 +22,10 @@ function reloadScores() {
 	});	
 }
 
+function submitScore(score) {
+		
+}
+
 function displayHighScore(score, metrics) {
 	$("#highscore").css("visibility", "visible");
 	
