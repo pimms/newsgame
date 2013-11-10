@@ -10,16 +10,15 @@ function Spawner(world) {
 	this.spawnerFocusIndex = 0;
 	this.spawnerFocusTimer = 0;
 	this.spawnFocus = new Array();
-	this.image = gamejs.image.load('img/sumbolSheet.png');
+	this.image = gamejs.image.load('img/symbolSheet.png');
 	
 	for ( var i = 0 ; i < 12 ; i++ ) {
 		this.spawnFocus[i] = Math.floor((Math.random() * 6) + 1);
 	}
 	
 	this.draw = function( display ) {
-		for ( var i = this.spawnerFocusIndex ; i < 12 ; i++ ) {
-			display.blit((new gamejs.font.Font('30px Sans-serif')).render( this.spawnFocus[i].toString() ), new gamejs.Rect([500+20*i,100]));
-			display.blit( this.image, new gamejs.Rect([128+128*this.spawnFocus[i],0], new gamejs.Rect([500+20*i,100]));
+		for ( var i = 0 ; i < 5 ; i++ ) {
+			display.blit( this.image, new gamejs.Rect([520+55*i,50],[64,64]), new gamejs.Rect([128*(this.spawnFocus[i+this.spawnerFocusIndex]%5),128*Math.floor(this.spawnFocus[i+this.spawnerFocusIndex]/5)],[128,128]));
 		}
 	}
 
