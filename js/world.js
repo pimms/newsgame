@@ -51,6 +51,8 @@ function World() {
 	this.update = function(msDuration) {
 		if( score.timer < 1 && !this.gameEnded ) {
 			this.gameEnded = true;
+			
+			displayHighScore(100);
 		}
 		
 		if( !this.gameEnded ) {

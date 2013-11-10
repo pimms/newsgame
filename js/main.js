@@ -31,7 +31,8 @@ gamejs.ready( function(){
                   "score.js",
                   "label.js",
                   "metrics.js",
-                  "bar.js"]);
+                  "bar.js",
+                  "highscore.js"]);
 
     var display = gamejs.display.setMode([800, 600]);
     var mainSurface = gamejs.display.getSurface();
