@@ -9,7 +9,7 @@ var Score = function() {
 	/* IF THIS IS STILL 10, I FORGOT TO CHANGE IT BACK TO 120. 
 	 * Best regards, Anders. 
 	 */
-	this.timer = 10*1000;
+	this.timer = 120*1000;
 };
 
 

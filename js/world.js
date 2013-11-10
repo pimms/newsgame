@@ -1,7 +1,8 @@
 include_once([	"player.js", 
 	 		 	"spawner.js", 
 	 		 	"score.js",
-	 		 	"metrics.js"])
+	 		 	"metrics.js",
+	 		 	"highscore.js"])
 
  function depthCompare(a,b) {
 	return a.posY - b.posY;
@@ -42,8 +43,6 @@ function World() {
 			label.draw(mainSurface, currentTypeName);
 			this.spawner.draw(mainSurface);
 			this.metrics.draw(mainSurface);
-		} else {
-			score.drawScore(mainSurface);
 		}
 
 	}
@@ -57,8 +56,6 @@ function World() {
 		
 		if( !this.gameEnded ) {
 			this.updateGame(msDuration);	
-		} else {
-			// Display high score or something... ?
 		}
 	}
 
