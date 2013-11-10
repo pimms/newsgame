@@ -107,48 +107,48 @@ Person.prototype.characterType = function() {
 			break;
 		case 2:
 			this.image = gamejs.image.load('img/nurse.png');
-			this.typeName = "Sykepleiere er tydligvis viktige...";
+			this.typeName = "Hvem er der for å hjelpe doktorene? Sykepleierene!";
 			this.group = HEALTH;
 			break;
 		case 3:
 			this.image = gamejs.image.load('img/father.png');
-			this.typeName = "Fedre trenger ingenting. Gå tilbake på jobb!";
+			this.typeName = "Fedre trenger også foreldrepermisjon!";
 			this.group = WELFARE;
 			break;
 		case 4:
 			this.image = gamejs.image.load('img/old.png');
-			this.typeName = "Pensjonister får IKKE penger, hvorfor skulle de?";
+			this.typeName = "Det er viktig å ta vare på de eldre!";
 			this.group = WELFARE;
 			break;
 			
 		case 5:
 			this.image = gamejs.image.load('img/student.png');
-			this.typeName = "Studenter får penger, for de er Norges fremtid. BIATCH";
+			this.typeName = "Studenter er neste generasjons ledere!";
 			this.group = SCIENCE_EDU;
 			break;
 		case 6:
 			this.image = gamejs.image.load('img/scientist.png');
-			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.typeName = "Vitenskapsmenn er nøkkelen til fremgang!";
 			this.group = SCIENCE_EDU;
 			break;
 		case 7:
 			this.image = gamejs.image.load('img/construction_worker.png');
-			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.typeName = "Uten konstruksjonsarbeidere hadde vi fortsatt bodd i huler!";
 			this.group = INFRASTRUCTURE;
 			break;
 		case 8:
 			this.image = gamejs.image.load('img/doctor.png');
-			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.typeName = "Syk? Doktoren er der for deg!";
 			this.group = HEALTH;
 			break;
 		case 9:
 			this.image = gamejs.image.load('img/police.png');
-			this.typeName = "Vitenskap får penger, for det trengs!";
+			this.typeName = "Politiet holder gatene rene for kriminalitet!";
 			this.group = INFRASTRUCTURE;
 			break;
 		case 10:
 			this.image = gamejs.image.load('img/viking.png');
-			this.typeName = "Kunstnere, HAH! De er ubrukelige som få!";
+			this.typeName = "Vikinger er norsk kultur på sitt beste!";
 			this.group = CULTURE;
 			break;
 	}
