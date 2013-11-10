@@ -10,23 +10,23 @@
 #tutorial {
 	position: absolute;
 	left: 50%;
-   	top: 50%;
+	top: 300px;
    	
    	width: 800px;
    	height: 600px;
    	margin-left: -400px;
    	margin-top: -300px;
    	
-   	background-image: url("img/loading_screen.png");
-   	background-repeat: no-repeat;
+   	background-image: url("img/tutorial.png");
 }
 
 #tutorial button {
 	position: relative;
-	left: 400px;
-	top: 300px;
+	left: 110px;
+	top: 350px;
 	width: 100px;
 	height: 60px;
+	background-color: #00FF00;
 }
 
 .gameoverlay {
