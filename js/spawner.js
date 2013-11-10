@@ -18,7 +18,7 @@ function Spawner(world) {
 	
 	this.draw = function( display ) {
 		for ( var i = 0 ; i < 5 ; i++ ) {
-			display.blit( this.image, new gamejs.Rect([520+55*i,50],[64,64]), new gamejs.Rect([128*(this.spawnFocus[i+this.spawnerFocusIndex]%5),128*Math.floor(this.spawnFocus[i+this.spawnerFocusIndex]/5)],[128,128]));
+			//display.blit( this.image, new gamejs.Rect([520+55*i,50],[64,64]), new gamejs.Rect([128*(this.spawnFocus[i+this.spawnerFocusIndex]%5),128*Math.floor(this.spawnFocus[i+this.spawnerFocusIndex]/5)],[128,128]));
 		}
 	}
 
@@ -55,7 +55,7 @@ function Spawner(world) {
 	}
 
 	this.randomCharacter = function() {
-		var id = Math.ceil(Math.random() * 20);
+		var id = Math.ceil(Math.random() * 14);
 		if ( id > 10 ) {
 			id = this.spawnFocus[this.spawnerFocusIndex];
 		}
