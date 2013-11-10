@@ -62,7 +62,6 @@ function World() {
 	this.updateGame = function(msDuration) {
 		this.spawner.update(msDuration);
 
-		// OH MY GOD I HATE JAVASCRIPT
 		var test = this.player.person;
 		var world = this;
 

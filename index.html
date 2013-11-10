@@ -15,7 +15,7 @@
         #gjs-loader {
             width: 800px;
             height: 600px;
-            background: url('./img/background.png');
+            background: url('./img/loading.png');
         }
     </style>
 
@@ -27,8 +27,8 @@
     <script>
 	function startGame() {
 		$("#tutorial").remove();
-        require.setModuleRoot('./js/');
-        require.run('main');
+		require.setModuleRoot('./js/');
+    	require.run('main');
 	}
 	
 	function restartGame() {
