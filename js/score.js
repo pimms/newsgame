@@ -5,7 +5,7 @@ var Score = function() {
 	this.posY = 40;
 	this.multiplier = 1;
 	this.multiplierBuildup = 0;
-	this.timer = 120*1000;
+	this.timer = 2*1000;
 };
 
 
