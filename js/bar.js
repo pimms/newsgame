@@ -23,11 +23,10 @@ function Bar(subtype) {
 		var distance = Math.abs(actualLength - this.current) * 3;
 		if (distance > 1) distance = 1;
 		var fillColor = "rgb(0, 255, 0)";
-		//var fillColor = "rgb(" + (distance * 255) + "," + ((1 - distance) * 255) + ",0)";
-		//var hexColor = "#" + Math.floor((distance * 255)).toString(16) + Math.floor(((1 - distance) * 255)).toString(16) + (0).toString(16);
-		//console.log(actualLength + ", " + this.current + ", " + fillColor + ", " + distance);
-		//console.log(fillColor + ", " + hexColor);
-		//console.log(test);
+
+		if(this.current - this.target > 0) {
+			fillColor = "rgb(255, 0, 0)";
+		}
 
 		draw.rect(	surface, fillColor, new gamejs.Rect([position[0] + 5, position[1] + 100], [actualLength / BAR_CUTOFF * 100, 0]), 10);
 
