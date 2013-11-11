@@ -27,6 +27,7 @@ gamejs.ready( function(){
 });
 
 function load() {
+    $("#tutorial").remove();
     include_once([  "const.js", 
                     "spawner.js", 
                     "world.js", 

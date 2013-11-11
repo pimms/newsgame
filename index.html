@@ -26,7 +26,8 @@
     <script src="./public/utils.js"></script>
     <script>
 	function startGame() {
-		$("#tutorial").remove();
+		$("#tutorial").empty();
+		$("#tutorial").css("background-image", "url(./img/loading.png)")
 		require.setModuleRoot('./js/');
     	require.run('main');
 	}
