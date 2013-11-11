@@ -17,5 +17,14 @@ if (isset($_GET["Hash"])) {
 	$url .= "&Hash=" . $_GET["Hash"];
 }
 
+if (isset($_GET["from"])) {
+	$url .= "&from=" . $_GET["from"];
+}
+
+if (isset($_GET["num"])) {
+	$url .= "&num=" . $_GET["num"];
+}
+
+
 echo file_get_contents($url);
 ?>

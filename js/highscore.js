@@ -4,25 +4,32 @@ include_once(["metrics.js"]);
 /* Global final score */
 var global_score = 0;
 
-function reloadScores() {
+function reloadScores(firstScore) {
+	if(typeof(firstScore)==='undefined') firstScore=0;
+
 	console.log("Reloading scores...");
-	$.get("proxyhs.php?url=http://gtl.hig.no/displayScore.php", function(scores) {
+	$.get("proxyhs.php?url=http://gtl.hig.no/displayScore.php&from="+firstScore+"&num=10", function(scores) {
 		var array = $.trim(scores).split(" ");
-		
-		var list = $("#listwrapper");
-		list.empty();
-		list.append('<table width="100%">');
-		
-		var table = $("#listwrapper table");
-		table.append('<tr><td width="10%"><b>Plass</b></td><td><b>Navn</b></td><td><b>Score</b></td></tr>');
-		
-		for (var i=0; i<array.length/3; i++) {
-			var row = "<tr>";
-			for (var j=0; j<3; j++) {
-				row += "<td>" + array[i*3+j] + "</td>";
+		if (array.length >= 3) {
+			var list = $("#listwrapper");
+			list.empty();
+			list.append('<table width="100%">');
+			
+			var table = $("#listwrapper table");
+			table.append('<tr><td width="10%"><b>Plass</b></td><td><b>Navn</b></td><td><b>Score</b></td></tr>');
+			
+			for (var i=0; i<array.length/3; i++) {
+				var row = "<tr>";
+				for (var j=0; j<3; j++) {
+					row += "<td>" + array[i*3+j] + "</td>";
+				}
+				row += "</tr>";
+				table.append(row);
 			}
-			row += "</tr>";
-			table.append(row);
+
+			/* Add buttons */
+			list.append('<button onclick="reloadScores(' + Math.max(firstScore-10,0) + ')">Minus</button>');
+			list.append('<button onclick="reloadScores(' + (firstScore+10) + ')" style="float:right;">Pluss</button>');
 		}
 	});	
 }
@@ -47,7 +54,7 @@ function submitScore() {
 	rePattern = /^[a-zA-Z]{3,}$/;
 	if (rePattern.test(name)) {
 		uploadScore(name);
-		$("#highscore .gameoverlay").append('<button onClick = "restartGame()" visibility="hidden"> New game </button>');
+		$("#highscore .gameoverlay").append('<button onClick = "restartGame()" visibility="hidden"> Nytt spill </button>');
 	} else {
 		var div = $("#usernameerror");
 		div.empty();

@@ -20,7 +20,6 @@ Score.prototype.update = function( elapsed ) {
 		}
 	}
 	
-	
 	this.timer -= elapsed;
 };
 
