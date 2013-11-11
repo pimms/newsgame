@@ -112,24 +112,24 @@ function Player() {
 	var touch = document.getElementById("gjs-canvas");
 	touch.addEventListener('touchstart', function(e) {
 		var touchobj = e.changedTouches[0];
-		var touchx = parseInt(touchobj.clientX);
-		var touchy = parseInt(touchobj.clientY);
+		var touchx = parseInt(touchobj.pageX);
+		var touchy = parseInt(touchobj.pageY);
 		touchMovement.moveTo(touchx, touchy);
 		e.preventDefault()
 	}, false)
 
 	touch.addEventListener('touchmove', function(e) {
 		var touchobj = e.changedTouches[0];
-		var touchx = parseInt(touchobj.clientX);
-		var touchy = parseInt(touchobj.clientY);
+		var touchx = parseInt(touchobj.pageX);
+		var touchy = parseInt(touchobj.pageY);
 		touchMovement.moveTo(touchx, touchy);
 		e.preventDefault()
 	},false);
 		
 	touch.addEventListener('touchend', function(e) {
 		var touchobj = e.changedTouches[0];
-		var touchx = parseInt(touchobj.clientX);
-		var touchy = parseInt(touchobj.clientY);
+		var touchx = parseInt(touchobj.pageX);
+		var touchy = parseInt(touchobj.pageY);
 		touchMovement.moveTo(touchx, touchy);
 		e.preventDefault()
 	},false)

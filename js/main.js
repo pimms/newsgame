@@ -3,7 +3,7 @@ font   = require('gamejs/font');
 draw   = require("gamejs/draw");
 
 gamejs.preload(["img/background.png", 
-                 "img/construction_worker.png",
+                "img/construction_worker.png",
                 "img/siv_jensen.png",
                 "img/money.png",
                 "img/artist.png",
