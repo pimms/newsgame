@@ -5,7 +5,8 @@ include_once(["metrics.js"]);
 var global_score = 0;
 
 function reloadScores() {
-	$.get("proxyhs.php?url=http://gtl.hig.no/displayScore.php?GameID=1", function(scores) {
+	console.log("Reloading scores...");
+	$.get("proxyhs.php?url=http://gtl.hig.no/displayScore.php", function(scores) {
 		var array = $.trim(scores).split(" ");
 		
 		var list = $("#listwrapper");
@@ -28,13 +29,14 @@ function reloadScores() {
 
 function uploadScore(username) {
 	username.replace(" ", "%20");
-	var url = "http://gtl.hig.no/logScore.php?GameID=1&User="+username;
+	var url = "proxyhs.php?url=http://gtl.hig.no/logScore.php&User="+username;
 	url += "&Score=" + global_score;
-	url += "&hash=" + CryptoJS.MD5(username + global_score + "spicegirls");
+	url += "&Hash=" + CryptoJS.MD5(username + global_score + "spicegirls");
 	
-	console.log(url);
+	console.log("Uploading score to: " + url);
 	
-	$.get("proxyhs.php?url=" + url, function(result) {
+	$.get(url, function(result) {
+		console.log(result);
 		reloadScores();
 	});
 }
@@ -70,6 +72,6 @@ function displayHighScore(rawScore, metrics) {
 	
 	var score = calculateScore(rawScore, metrics);
 	$("#listwrapper").prepend("<h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsppoeng : " + rawScore + 
-							  "<br> Presisjons Bonus * "+ this.scoreMultiplier + 
+							  "<br> &nbsp&nbsp&nbspPresisjonsbonus * "+ this.scoreMultiplier + 
 							  "<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsppoengsum = " +score+ "</h3>");
 }
